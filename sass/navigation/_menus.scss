@@ -1,0 +1,199 @@
+.main-navigation {
+	clear: both;
+	display: block;
+	float: left;
+	width: 100%;
+
+	ul {
+		display: none;
+		list-style: none;
+		margin: 0;
+		padding-left: 0;
+
+		ul {
+			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+			float: left;
+			position: absolute;
+			top: 100%;
+			left: -999em;
+			z-index: 99999;
+
+			ul {
+				left: -999em;
+				top: 0;
+			}
+
+			li {
+				&:hover > ul,
+				&.focus > ul {
+					left: 100%;
+				}
+			}
+
+			a {
+				width: 200px;
+				font-family: $secondary-font;
+			}
+
+			:hover > a,
+			.focus > a {
+			}
+
+			a:hover,
+			a.focus {
+			}
+		}
+
+		li:hover > ul,
+		li.focus > ul {
+			left: auto;
+		}
+	}
+
+	li {
+		float: left;
+		position: relative;
+
+		&:hover > a,
+		&.focus > a {
+			text-decoration: underline;
+		}
+	}
+
+	a {
+		display: block;
+		text-decoration: none;
+		font-family: $secondary-font;
+		text-transform: uppercase;
+	}
+
+	.current_page_item > a,
+	.current-menu-item > a,
+	.current_page_ancestor > a,
+	.current-menu-ancestor > a {
+	}
+}
+
+/* Small menu. */
+.menu-toggle,
+.main-navigation.toggled ul {
+	display: block;
+}
+.menu-toggle {
+	float: right;
+}
+
+
+@media screen and (max-width: 37.5em) {
+		.main-navigation {
+			ul {
+				li {
+					width: 100%;
+					padding: 8px;
+					border-bottom: 2px solid $green;
+				}
+			}
+		}
+}
+
+@media screen and (min-width: 37.5em) {
+	.menu-toggle {
+		display: none;
+	}
+	.main-navigation ul {
+		display: block;
+	}
+	// big screens only, add cool circles to main nav items
+	.main-navigation li {
+	    float: left;
+	    position: relative;
+	    border-bottom: 2px solid $green;
+	    margin: 0 10px 0 0;
+			padding: 0 22px 0 8px;
+	}
+	.main-navigation li:last-child {
+		padding-right:100px;
+		margin-right: 0px;
+	}
+	.main-navigation li::before {
+		content: " ";
+		border: 2px solid $green;
+		padding: 8px 8px 0px 0px;
+		border-radius: 8px;
+		width: 8px;
+		height: 8px;
+		display: block;
+		position: relative;
+		top: 1.95rem;
+		left: -18px;
+	}
+	// footer area, reverse it
+	.footer-menu {
+		padding-top: 30px;
+		ul {
+			margin: 0;
+			padding: 0;
+		}
+	}
+	.footer-menu li {
+			list-style-type: none;
+			float: left;
+			position: relative;
+			border-bottom: 2px solid white;
+			margin: 0 10px 0 0;
+			padding: 0 22px 0 8px;
+			a {
+				color: white;
+				text-decoration: none;
+				text-transform: uppercase;
+				font-family: $secondary-font;
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+
+	}
+	.footer-menu li:first-child {
+		padding-left:100px;
+	}
+	.footer-menu li::after {
+		content: " ";
+		border: 2px solid white;
+		padding: 8px 8px 0px 0px;
+		border-radius: 8px;
+		width: 8px;
+		height: 8px;
+		display: block;
+		position: relative;
+		position: relative;
+		top: 20px;
+		float: right;
+		left: 32px;
+	}
+}
+
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+
+	.site-main & {
+		margin: 0 0 1.5em;
+		overflow: hidden;
+	}
+
+	.nav-previous {
+		float: left;
+		width: 50%;
+	}
+
+	.nav-next {
+		float: right;
+		text-align: right;
+		width: 50%;
+	}
+}
+.top-right li, .top-right li a {
+	color: $green;
+	text-decoration: none;
+	font-family: $secondary-font;
+}
