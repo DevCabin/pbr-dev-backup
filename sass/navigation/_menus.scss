@@ -65,12 +65,14 @@
 		text-decoration: none;
 		font-family: $secondary-font;
 		text-transform: uppercase;
+		color: $green;
 	}
 
 	.current_page_item > a,
 	.current-menu-item > a,
 	.current_page_ancestor > a,
 	.current-menu-ancestor > a {
+		color: $blue;
 	}
 }
 
@@ -93,6 +95,33 @@
 					border-bottom: 2px solid $green;
 				}
 			}
+		}
+		.footer-menu {
+			padding-top: 30px;
+			ul {
+				margin: 0;
+				padding: 0;
+			}
+		}
+		.footer-menu li {
+		    list-style-type: none;
+		    float: left;
+		    position: relative;
+		    border-bottom: 2px solid white;
+		    margin: 0;
+		    padding: 0 0 12px 0;
+		    display: inline-block;
+		    width: 100%;
+		    text-align: center;
+				a {
+					color: white;
+					text-decoration: none;
+					text-transform: uppercase;
+					font-family: $secondary-font;
+					&:hover {
+						text-decoration: underline;
+					}
+				}
 		}
 }
 
@@ -151,7 +180,6 @@
 					text-decoration: underline;
 				}
 			}
-
 	}
 	.footer-menu li:first-child {
 		padding-left:100px;

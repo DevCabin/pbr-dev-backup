@@ -27,7 +27,9 @@
 	<header id="masthead" class="site-header">
 			<div class="site-branding">
 				<div class="site-title">
-					<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo.png" alt="">
+					<a href="<?php echo site_url();?>">
+						<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo.png" alt="">
+					</a>
 				</div>
 				<?php
 				/*
