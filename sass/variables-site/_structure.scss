@@ -23,7 +23,7 @@ $wrapper__width: 1440px;
   table-layout: fixed;
 }
 
-.wrapper, header.site-header {
+.wrapper, .grid-three, .grid-four, header.site-header {
   width: 100%;
   max-width: $wrapper__width;
   margin: 0 auto;
@@ -86,6 +86,54 @@ header.site-header {
     grid-column-gap: 5px;
     grid-row-gap: 0px;
   }
+  .grid-four {
+    grid-column: col / span 2;
+    display: grid;
+    grid-template-columns: [col] 1fr [col] 1fr [col] 1fr [col] 1fr;
+    // grid-auto-rows: minmax(450px, auto);
+    grid-column-gap: 5px;
+    grid-row-gap: 0px;
+    .banner {
+      grid-column: col / span 4;
+    }
+    .left {
+      grid-column: col / span 2;
+    }
+    .image-div {
+      grid-column: col 3 / span 2;
+    }
+  }
+  .grid-three {
+    grid-column: col / span 2;
+    display: grid;
+    grid-template-columns: [col] 1fr [col] 1fr [col] 1fr;
+    // grid-auto-rows: minmax(450px, auto);
+    grid-column-gap: 5px;
+    grid-row-gap: 0px;
+    .blue-reverse {
+      padding: 0;
+    }
+    .banner {
+      grid-column: col / span 3;
+    }
+    .contact-left {
+      grid-column: col / span 1;
+    }
+    .right-form form {
+      grid-column: col 2 / span 2;
+      display: grid;
+      grid-template-columns: [col] 1fr [col] 1fr [col] 1fr [col] 1fr;
+      grid-template-rows: [row] 1fr [row] 1fr [row] 2fr;
+      grid-column-gap: 20px;
+      grid-row-gap: 20px;
+      input {
+
+      }
+      textarea {
+        grid-column: col / span 4;
+      }
+    }
+  }
   .image-div {
     min-height: 385px;
   }
@@ -95,6 +143,7 @@ header.site-header {
     justify-content: end;
     align-content: center;
   }
+
   .banner-text {
     width: 70%;
     justify-self: flex-end;
@@ -120,7 +169,15 @@ header.site-header {
       }
 
   }
-
+  .analytics .banner-text {
+    width: 88%;
+  }
+  .services .banner-text {
+    justify-self: flex-start;
+    position: relative;
+    left: 15%;
+    width: 70%;
+}
   .banner-group {
     grid-column: col 2 / span 1;
     padding-right: 165px;
@@ -206,13 +263,13 @@ header.site-header {
     padding: 0 75px 0 200px;
 
      h3.line {
-      float: left;
-      position: relative;
-      border-bottom: 2px solid $green;
-      padding: 0 22px 0 8px;
-      margin: 0;
-      font-size: 1.5rem;
-      letter-spacing: 1.2px;
+        float: left;
+        position: relative;
+        border-bottom: 2px solid $green;
+        padding: 0 22px 0 8px;
+        margin: 0;
+        font-size: 1.5rem;
+        letter-spacing: 1.2px;
       }
      h3.line::before {
         content: " ";
@@ -233,13 +290,13 @@ header.site-header {
     padding: 0 75px 0 200px;
 
      h3.line {
-      float: left;
-      position: relative;
-      border-bottom: 2px solid $red;
-      padding: 0 22px 0 8px;
-      margin: 0;
-      font-size: 1.5rem;
-      letter-spacing: 1.2px;
+        float: left;
+        position: relative;
+        border-bottom: 2px solid $red;
+        padding: 0 22px 0 8px;
+        margin: 0;
+        font-size: 1.5rem;
+        letter-spacing: 1.2px;
       }
      h3.line::before {
         content: " ";
@@ -260,13 +317,13 @@ header.site-header {
     padding: 0 75px 0 200px;
 
      h3.line {
-      float: left;
-      position: relative;
-      border-bottom: 2px solid $blue;
-      padding: 0 22px 0 8px;
-      margin: 0;
-      font-size: 1.5rem;
-      letter-spacing: 1.2px;
+        float: left;
+        position: relative;
+        border-bottom: 2px solid $blue;
+        padding: 0 22px 0 8px;
+        margin: 0;
+        font-size: 1.5rem;
+        letter-spacing: 1.2px;
       }
      h3.line::before {
         content: " ";
@@ -366,7 +423,10 @@ header.site-header {
     display: grid;
     background-color: $gray;
     color: white;
-    height:240px;
+    border-top: 5px solid white;
+    border-bottom: 5px solid white;
+    height: auto;
+    min-height: 240px;
     grid-template-columns: 3fr 1fr;
     grid-template-rows: 3fr
                         1fr;
@@ -447,6 +507,13 @@ header.site-header {
     }
     p {
         width: 72%;
+    }
+  }
+  .red.left {
+    h3, p {
+      position: relative;
+      width: 85%;
+      left: 15%;
     }
   }
   .red.right h3.line::before {
@@ -540,7 +607,38 @@ header.site-header {
         padding-left: 60px;
     }
   }
-  .green.right h3, .red.right p {
+  .green-reverse.right {
+    padding: 0px;
+
+    h3 {
+      padding-left: 70px;
+      top: -70px;
+      position: relative;
+    }
+    p {
+      padding-left: 70px;
+      top: -70px;
+      position: relative;
+    }
+  }
+  .green-reverse.right h3.line::before {
+    display: none;
+    content: none;
+  }
+  .green-reverse.right h3.line::after {
+      content: " ";
+      border: 2px solid $green;
+      padding: 8px 8px 0px 0px;
+      border-radius: 8px;
+      width: 8px;
+      height: 8px;
+      display: block;
+      position: relative;
+      top: 31px;
+      float: right;
+      left: 33px;
+  }
+  .green-reverse.right h3, .red.right p {
     position: relative;
     top: -70px;
   }
@@ -748,6 +846,32 @@ header.site-header {
   .banner {
     order: 1;
   }
+  .left, .right, .image-div, .callout {
+    order: 2;
+  }
+  .blue p.left-text {
+    width: 92%;
+    left: auto;
+  }
+  .green p {
+    width: 92%;
+  }
+  .blue p {
+    width: 92%;
+    left: auto;
+  }
+  .grid-four {
+    grid-template-columns: [col] 1fr;
+    .image-div {
+      grid-column: col;
+      min-height: 250px;
+    }
+    .right-form {
+      grid-column: col;
+      min-height: 250px;
+    }
+  }
+  /*
   .green.left {
     order: 2;
   }
@@ -769,11 +893,16 @@ header.site-header {
   .third-image {
     order: 8;
   }
+  */
   .row .left-text, .row .circle-chart {
     grid-column: span 4;
   }
+  .row .left-text {
+    justify-self: center;
+    padding: 0 2%;
+  }
   .sub-banner {
-    order: 0;
+   order: 0;
     // fix what's carried over from home layout
 
     height: 207px !important;

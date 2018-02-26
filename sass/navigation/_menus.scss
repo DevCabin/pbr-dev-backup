@@ -56,7 +56,8 @@
 
 		&:hover > a,
 		&.focus > a {
-			text-decoration: underline;
+			color: $blue;
+			text-decoration: none;
 		}
 	}
 
@@ -67,6 +68,7 @@
 		text-transform: uppercase;
 		color: $green;
 	}
+
 
 	.current_page_item > a,
 	.current-menu-item > a,
