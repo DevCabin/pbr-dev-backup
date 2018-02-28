@@ -5,16 +5,14 @@
 require('es6-promise').polyfill();
 // Gotta Gulp it. The extra two are for minifying js for production
 var gulp          = require('gulp'),
-    gp_concat = require('gulp-concat'),
-    gp_uglify = require('gulp-uglify');
+    gp_concat     = require('gulp-concat'),
+    gp_uglify     = require('gulp-uglify');
 // Freaking love SASS
 var sass          = require('gulp-sass');
 // Stupid broswer compatibility
 var autoprefixer  = require('gulp-autoprefixer');
 // Get useful error messages, not just blank fails on errors
 var plumber       = require('gulp-plumber');
-
-
 
 // start using that stuff
 gulp.task('sass', function() {
@@ -29,7 +27,7 @@ gulp.task('sass', function() {
   // Spit out that css for real world use
   .pipe(gulp.dest('./'))
 });
-// Here's where we use the error handler
+// Here's where we use the 'plumber' error handler
 var onError = function (err) {
   console.log('An error occurred: ' + err.message);
   this.emit('end');
@@ -53,7 +51,6 @@ gulp.task('js', function(){
 //   ])
 // });
 
-
 // We don't want to run a command every time we change something,
 // this will do it automatically for us
 gulp.task('watch', function() {
@@ -62,3 +59,4 @@ gulp.task('watch', function() {
 });
 // Define a default if we just type 'gulp' in the console with no argument
 gulp.task('default', ['sass', 'js', 'watch']);
+// end of line 

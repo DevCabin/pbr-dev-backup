@@ -10,71 +10,63 @@
 
 get_header(); ?>
 
-			<div class="banner" style="background:url(<?php echo get_stylesheet_directory_uri(); ?>/img/page_banner_4.png) top center no-repeat; height: 407px; margin-bottom: 6px;">
+			<div class="banner" style="background:url(<?php the_field( 'home_banner_image' ); ?>) top center no-repeat; height: 407px; margin-bottom: 6px;">
 
 				<div class="banner-text">
-					<h2>Medical Bill Review<br>
-					For Workers Comp</h2>
-					<p>We offer uniquely personal service
-					helping employers contain costs on their
-					workers' compensation claims through
-				  medical bill review and negotiation</p>
-					<a href="#" class="button button-solid red">LEARN MORE</a>
+        <?php the_field( 'home_banner_text' ); ?>
+					<a href="<?php the_field( 'home_banner_button_link' ); ?>" class="button button-solid red"><?php the_field( 'home_banner_button_text' ); ?></a>
 				</div>
 				<div class="banner-group">
-					<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/Group307.png" alt="">
+					<a href="<?php the_field( 'home_banner_super_link' ); ?>">
+						<img src="<?php the_field( 'home_banner_super_image' ); ?>" alt="">
+					</a>
 				</div>
 			</div>
 
 
 				<div class="green left">
 					<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/green-check.png" alt="">
-					<h3 class="line">We've Got you Covered!</h3>
-					<p>Lorem ipsum doler sit amet ipsum doler sit
-						Lorem ipsum doler sit amet</p>
-						<a class="button">Learn More</a>
+					<h3 class="line"><?php the_field( 'home_top_left_heading' ); ?></h3>
+					<?php the_field( 'home_top_left_content' ); ?>
+						<a href="<?php the_field( 'home_top_left_link' ); ?>" class="button"><?php the_field( 'home_top_left_link_text' ); ?></a>
 				</div>
 
-				<div class="image-div first-image" style="background:url(<?php echo get_stylesheet_directory_uri(); ?>/img/home-right.png) top center no-repeat;">
+				<div class="image-div first-image" style="background:url(<?php the_field( 'top_right_image_n' ); ?>) top center no-repeat;">
 
 				</div>
 
 
-				<div class="image-div second-image" style="background:url(<?php echo get_stylesheet_directory_uri(); ?>/img/home-left.png) center center no-repeat;">
+				<div class="image-div second-image" style="background:url(<?php the_field( 'home_row_two_left_image' ); ?>) center center no-repeat;">
 
 				</div>
 				<div class="blue right">
 					<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/lightbulb.png" alt="">
 
-					<h3 class="line">The Proactive Approach</h3>
-					<p>Lorem ipsum doler sit amet doler sit sit amet doler sit
-						Lorem ipsum doler sit amet</p>
-						<a class="button">Learn More</a>
+					<h3 class="line"><?php the_field( 'second_row_heading' ); ?></h3>
+					<?php the_field( 'second_row_content' ); ?>
 
 				</div>
 
 			<div class="row callout" style="min-height:400px;background:url(<?php echo get_stylesheet_directory_uri(); ?>/img/pattern@2x.png) center center no-repeat;background-size: cover;">
 				<div class="left-text">
-					<h3>We Save You</h3>
-					<h4>Precision Bill Review saved<br>
-					our clients 47.38%</h4>
-					<a class="button button-solid green">Learn More</a>
+
+					<?php the_field( 'home_callout_area_text' ); ?>
+
 				</div>
 
 				<div class="circle-chart">
-					<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/circle-graphic.png" alt="fourty seven percent">
+					<img src="<?php the_field( 'home_callout_area_image' ); ?>" alt="number saved image">
 				</div>
 
 			</div><!-- callout -->
 
 				<div class="red left">
 					<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/matrix-white.png" alt="">
-					<h3 class="line">Web Enhanced Tech</h3>
-					<p>Lorem ipsum doler sit amet ipsum doler sit
-						Lorem ipsum doler sit amet</p>
-						<a class="button">Learn More</a>
+					<h3 class="line"><?php the_field( 'home_bottom_left_heading' ); ?></h3>
+
+						<?php the_field( 'home_bottom_left_content' ); ?>
 				</div>
-				<div class="image-div third-image" style="background:url(<?php echo get_stylesheet_directory_uri(); ?>/img/home-bottom.png) center center no-repeat;">
+				<div class="image-div third-image" style="background:url(<?php the_field( 'home_bottom_right_image' ); ?>) center center no-repeat;">
 
 				</div>
 

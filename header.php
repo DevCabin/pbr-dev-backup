@@ -8,7 +8,7 @@
  *
  * @package The_X_Starter_Theme
  */
-
+global $redux_options;
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -47,9 +47,9 @@
 			<div class="top-right">
 				<?php dynamic_sidebar( 'sidebar-top' ); ?>
 				<ul>
-					<li>123-456-9874</li>
+					<li><?php echo $redux_options['top-text-left'] ;?></li>
 					<li><span class="blue-span">|</span> </li>
-					<li><a href="#portal">PROVIDER PORTAL</a></li>
+					<li><a href="<?php echo $redux_options['top-text-right-link'] ;?>"><?php echo $redux_options['top-text-right'] ;?></a></li>
 				</ul>
 			</div>
 
