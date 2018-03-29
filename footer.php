@@ -8,7 +8,7 @@
  *
  * @package The_X_Starter_Theme
  */
-
+global $redux_options;
 ?>
 
 
@@ -21,25 +21,35 @@
 			<h3 class="line">605.362.5699</h3>
 		</div>
 		<div class="contact-right">
-			<h3 class="line"><a href="#">Provider Portal</a></h3>
+			<h3 class="line">
+				<a href="http://www.talispoint.com/login/" target="_blank" rel="noopener">Provider Portal</a>
+			</h3>
 		</div>
 
 		<div class="footer-menu">
-			<ul>
-				<li><a href="#">About</a></li>
-				<li><a href="#">Services</a></li>
-				<li><a href="#">Testimonials</a></li>
-				<li><a href="#">Careers</a></li>
-				<li><a href="#">Contact</a></li>
-			</ul>
+
+			<?php
+				wp_nav_menu( array(
+					'theme_location' => 'menu-2',
+					'menu_id'        => 'footer-menu',
+				) );
+			?>
+
+			<!--ul id="footer-menu" class="menu">
+			    <li id="menu-item-20" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-20"><a href="../about/">About</a></li>
+			    <li id="menu-item-228" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-228"><a href="../services/">Services</a></li>
+			    <li id="menu-item-227" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-227"><a href="../analytics/">Analytics</a></li>
+			    <li id="menu-item-249" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-249"><a href="../customer-care/">Customer Care</a></li>
+			    <li id="menu-item-182" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-182"><a href="../contact/">Contact</a></li>
+			</ul-->
 		</div>
 
 
 		<div class="site-info-left">
-			<p>Prcision Bill Review et al</p>
+			<p><?php echo $redux_options['bottom-text-left'] ;?></p>
 		</div><!-- .site-info -->
 		<div class="site-info-right">
-			<p>&copy; 2018 PBR Etc Lorem ipsum doler sit amet</p>
+			<p><?php echo $redux_options['bottom-text-right'] ;?></p>
 		</div><!-- .site-info -->
 
 	</footer><!-- #colophon -->

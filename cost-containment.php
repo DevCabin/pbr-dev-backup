@@ -11,12 +11,10 @@
 
 get_header(); ?>
 
-			<div class="banner sub-banner grid-order-one" style="background:url(<?php the_field( 'cc_banner_image' ); ?>) top center no-repeat; height: 407px; margin-bottom: 6px;">
+			<div class="banner sub-banner grid-order-one" style="background:url(<?php the_field( 'banner_image_(copy)' ); ?>) top center no-repeat; height: 407px; margin-bottom: 6px;">
 
 				<div class="banner-text">
-					<!--h2>Lost Continent</h2>
-					<p>You pay what we pay! Factory direct pricing to you!</p-->
-					<?php the_field( 'cc_banner_area_text' ); ?>
+					<?php the_field( 'banner_area_text_(copy)' ); ?>
 				</div>
 
 			</div>
@@ -24,8 +22,8 @@ get_header(); ?>
 
 			<div class="green left">
 
-				<h3 class="line"><?php the_field( 'cc_top_left_heading' ); ?></h3>
-				<?php the_field( 'cc_top_left_content' ); ?>
+				<h3 class="line"><?php the_field( 'top_left_heading_(copy)' ); ?></h3>
+				<?php the_field( 'top_left_content_(copy)' ); ?>
 				<!--<ul>
 					<li>Hospitals</li>
 					<li>Doctors</li>
@@ -38,7 +36,7 @@ get_header(); ?>
 			</div>
 
 
-				<div class="image-div first-image grid-order-three" style="background:url(<?php the_field( 'cc_top_right_image' ); ?>) top center no-repeat;">
+				<div class="image-div first-image grid-order-three" style="background:url(<?php the_field( 'top_right_image_(copy)' ); ?>) top center no-repeat;">
 
 				</div>
 
@@ -48,13 +46,13 @@ End Row one
 ====================================================
 -->
 
-				<div class="image-div second-image grid-order-five" style="background:url(<?php echo get_stylesheet_directory_uri(); ?>/img/support-1-l.png) center center no-repeat;">
+				<div class="image-div second-image grid-order-five" style="background:url(<?php the_field( 'row_2_left_image_(copy)' ); ?>) center center no-repeat;">
 
 				</div>
 			<div class="blue right">
 
-					<h3 class="line left-text"><?php the_field( 'cc_row_2_right_heading' ); ?></h3>
-					<?php the_field( 'cc_row_2_right_text' ); ?>
+					<h3 class="line left-text"><?php the_field( 'row_2_right_heading_(copy)' ); ?></h3>
+					<?php the_field( 'row_2_right_text_(copy)' ); ?>
 						<!--<ul>
 							<li>Up-to-date state regulated fee schedule adiustments, UCR </li>
 							<li>Precision coding review</li>
@@ -76,13 +74,13 @@ End Row one
 
 			<div class="red-reverse left grid-order-four">
 
-				<h3 class="line"><?php the_field( 'cc_row_3_left_heading' ); ?></h3>
+				<h3 class="line"><?php the_field( 'row_3_left_heading_(copy)' ); ?></h3>
 
-					<?php the_field( 'cc_row_three_text' ); ?>
+					<?php the_field( 'row_3_left_text_(copy)' ); ?>
 
 			</div>
 
-			<div class="image-div third-image grid-order-six" style="background:url(<?php the_field( 'cc_row_3_right_image' ); ?>) top center no-repeat;">
+			<div class="image-div third-image grid-order-six" style="background:url(<?php the_field( 'row_3_right_image_(copy)' ); ?>) top center no-repeat;">
 
 			</div>
 
@@ -95,7 +93,7 @@ End Row one
 
 			<div class="row callout gray grid-order-seven">
 
-				<?php the_field( 'cc_callout_area_text' ); ?>
+				<?php the_field( 'callout_area_text_(copy)' ); ?>
 				<!--
 				<div class="left-text">
 
@@ -113,14 +111,14 @@ End Row one
 
 
 
-			<div class="image-div sixth-image  grid-order-nine" style="background:url(<?php the_field( 'cc_row_4_left_image' ); ?>) top center no-repeat;">
+			<div class="image-div sixth-image  grid-order-nine" style="background:url(<?php the_field( 'row_4_left_image_(copy)' ); ?>) top center no-repeat;">
 
 			</div>
 
 			<div class="green right grid-order-twelve">
 
-				<h3 class="line"><?php the_field( 'cc_row_4_right_heading' ); ?></h3>
-				<?php the_field( 'cc_row_4_right_text' ); ?>
+				<h3 class="line"><?php the_field( 'row_4_right_heading_(copy)' ); ?></h3>
+				<?php the_field( 'row_4_right_text_(copy)' ); ?>
 			</div>
 
 			<!--
@@ -132,11 +130,11 @@ End Row one
 
 			<div class="blue-reverse left grid-order-eleven">
 
-							<h3 class="line"><?php the_field( 'cc_row_5_left_heading' ); ?></h3>
-								<?php the_field( 'cc_row_5_left_text' ); ?>
+							<h3 class="line"><?php the_field( 'row_5_left_heading_(copy)' ); ?></h3>
+								<?php the_field( 'row_5_left_text_(copy)' ); ?>
 			</div>
 
-			<div class="image-div first-image " style="background:url(<?php the_field( 'cc_row_5_right_image' ); ?>) top center no-repeat;">
+			<div class="image-div first-image " style="background:url(<?php the_field( 'row_5_right_image_(copy)' ); ?>) top center no-repeat;">
 
 			</div>
 
@@ -166,11 +164,11 @@ End Row one
 
 					<div class="green-reverse left grid-order-fourteen">
 
-						<h3 class="line"><?php the_field( 'row_7_left_heading' ); ?></h3>
-							<?php the_field( 'cc_row_7_left_text' ); ?>
+						<h3 class="line"><?php the_field( 'row_7_left_heading_(copy)' ); ?></h3>
+							<?php the_field( 'row_7_left_text_(copy)' ); ?>
 					</div>
 
-					<div class="image-div first-image grid-order-fifteen" style="background:url(<?php the_field( 'cc_row_7_right_image' ); ?>" />) top center no-repeat;">
+					<div class="image-div first-image grid-order-fifteen" style="background:url(<?php the_field( 'row_7_right_image_(copy)' ); ?>) top center no-repeat;">
 
 					</div>
 
@@ -183,20 +181,17 @@ End Row one
 
 
 
-
-
-
-						<div class="row callout grid-order-thirteen" style="min-height:400px;background:url(<?php echo get_stylesheet_directory_uri(); ?>/img/pattern@2x.png) center center no-repeat;background-size: cover;">
+						<div class="row callout nomap grid-order-thirteen" style="min-height:300px;background:url(<?php echo get_stylesheet_directory_uri(); ?>/img/pattern@2x.png) center center no-repeat;background-size: cover;">
 							<div class="left-text">
 								<!--h3>We Save You</h3>
 								<h4>Precision Bill Review saved<br>
 								our clients 47.38%</h4>
 								<a class="button button-solid green">Learn More</a-->
-								<?php the_field( 'cc_callout_area_2_text' ); ?>
+								<?php the_field( 'callout_area_2_text_(copy)' ); ?>
 							</div>
 
 							<div class="circle-chart">
-								<img src="<?php the_field( 'cc_callout_area_2_image' ); ?>" alt="<?php the_field( 'cc_callout_area_2_text' ); ?>">
+								<img src="<?php the_field( 'callout_area_2_image_(copy)' ); ?>" alt="<?php the_field( 'cc_callout_area_2_text' ); ?>">
 							</div>
 
 						</div><!-- callout -->
@@ -207,15 +202,15 @@ End Row one
 
 
 
-					<div class="image-div second-image grid-order-five" style="background:url(<?php the_field( 'cc_bottom_top_left_image' ); ?>) center center no-repeat;">
+					<div class="image-div second-image grid-order-five" style="background:url(<?php the_field( 'bottom_top_left_image_(copy)' ); ?>) center center no-repeat;">
 
 					</div>
 
 					<div class="blue right">
 
-							<h3 class="line left-text"><?php the_field( 'cc_bottom_right_heading' ); ?></h3>
+							<h3 class="line left-text"><?php the_field( 'bottom_top_right_heading_(copy)' ); ?></h3>
 
-								<?php the_field( 'cc_bottom_right_content' ); ?>
+								<?php the_field( 'bottom_top_right_content_(copy)' ); ?>
 
 					</div>
 
@@ -228,12 +223,12 @@ End Row one
 
 					<div class="red-reverse left grid-order-four">
 
-						<h3 class="line"><?php the_field( 'cc_bottom_right_heading' ); ?></h3>
-							<?php the_field( 'cc_bottom_right_content' ); ?>
+						<h3 class="line"><?php the_field( 'bottom_left_heading_(copy)' ); ?></h3>
+							<?php the_field( 'bottom_left_content_(copy)' ); ?>
 
 					</div>
 
-					<div class="image-div third-image grid-order-six" style="background:url(<?php the_field( 'cc_bottom_right_image' ); ?>) top center no-repeat;">
+					<div class="image-div third-image grid-order-six" style="background:url(<?php the_field( 'bottom_right_image_(copy)' ); ?>) top center no-repeat;">
 
 					</div>
 

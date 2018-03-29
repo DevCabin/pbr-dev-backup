@@ -10,11 +10,10 @@
 
 get_header(); ?>
 
-			<div class="banner analytics" style="background:url(<?php echo get_stylesheet_directory_uri(); ?>/img/page_banner_4.png) top center no-repeat; height: 407px; margin-bottom: 6px; justify-content: flex-start;">
+			<div class="banner analytics" style="background:url(<?php the_field( 'banner_image' ); ?>) top center no-repeat; height: 407px; margin-bottom: 6px; justify-content: flex-start;">
 
 				<div class="banner-text">
-					<h2>Analytics</h2>
-					<p>We offer uniquely personal service helping employers </p>
+					<?php the_field( 'banner_area_text' ); ?>
 				</div>
 
 
@@ -22,43 +21,42 @@ get_header(); ?>
 
 
 				<div class="green left">
-					<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/green-check.png" alt="">
-					<h3 class="line">We've Got you Covered!</h3>
-					<p>Lorem ipsum doler sit amet ipsum doler sit
-						Lorem ipsum doler sit amet</p>
-						<a class="button">Learn More</a>
-				</div>
-
-				<div class="image-div first-image" style="background:url(<?php echo get_stylesheet_directory_uri(); ?>/img/home-right.png) top center no-repeat;">
+					<h3 class="line"><?php the_field( 'top_left_heading_(copy)' ); ?></h3>
+					<?php the_field( 'top_left_content_(copy)' ); ?>
 
 				</div>
 
+				<div class="image-div first-image" style="background:url(<?php the_field( 'top_right_image' ); ?>) top center no-repeat;">
 
-				<div class="image-div second-image" style="background:url(<?php echo get_stylesheet_directory_uri(); ?>/img/home-left.png) center center no-repeat;">
+				</div>
+
+
+				<div class="image-div second-image" style="background:url(<?php the_field( 'row_2_left_image_(copy)' ); ?>) center center no-repeat;">
 
 				</div>
 				<div class="blue right">
-					<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/lightbulb.png" alt="">
 
-					<h3 class="line">The Proactive Approach</h3>
-					<p>Lorem ipsum doler sit amet doler sit sit amet doler sit
-						Lorem ipsum doler sit amet</p>
-						<a class="button">Learn More</a>
+
+					<h3 class="line"><?php the_field( 'row_2_right_heading' ); ?></h3>
+					<?php the_field( 'row_2_right_text' ); ?>
 
 				</div>
 
 
 
 							<div class="row callout gray">
+								<?php the_field( 'callout_area_text_(copy)' ); ?>
+								<!--
 								<div class="left-text">
 
-									<h4>Learn more about our features</h4>
+									<h4>Learn more about our cost</h4>
 
 								</div>
 
 								<div class="cta-right">
 									<a class="button ">Learn More</a>
 								</div>
+							-->
 
 							</div><!-- callout -->
 
@@ -67,33 +65,26 @@ get_header(); ?>
 
 							<div class="red-reverse left ">
 
-								<h3 class="line">Hospital Bill Review</h3>
-									<p>It’s inevitable. At some point, nearly every company
-									faces workplace iniuries and must address complicated
-									workers’ compensation issues. Often the sheer volume of
-									mandatory paperwork, reports, and billing statements
-									can make it difficult to monitor medical and
-									rehabilitation costs in an efficient manner. We will ensure
-									that you pay only what you owe on your workers’
-									compensation claims.</p>
+								<h3 class="line"><?php the_field( 'row_3_left_heading' ); ?></h3>
+
+								<?php the_field( 'row_3_left_text_(copy)' ); ?>
 
 							</div>
 
-							<div class="image-div third-image " style="background:url(<?php echo get_stylesheet_directory_uri(); ?>/img/red-1-r.png) top center no-repeat;">
+							<div class="image-div third-image " style="background:url(<?php the_field( 'row_3_right_image' ); ?>) top center no-repeat;">
 
 							</div>
 
 
-							<div class="image-div sixth-image" style="background:url(<?php echo get_stylesheet_directory_uri(); ?>/img/home-right.png) top center no-repeat;">
+							<div class="image-div sixth-image" style="background:url(<?php the_field( 'bottom_left_image_final' ); ?>) top center no-repeat;">
 
 							</div>
 
 							<div class="green-reverse right">
 
-								<h3 class="line">We've Got you Covered!</h3>
-								<p>Lorem ipsum doler sit amet ipsum doler sit
-									Lorem ipsum doler sit amet</p>
-					
+								<h3 class="line"><?php the_field( 'bottom_right_heading_final' ); ?>!</h3>
+								<?php the_field( 'bottom_right_content_final' ); ?>
+
 							</div>
 
 

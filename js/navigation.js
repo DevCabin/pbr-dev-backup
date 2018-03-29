@@ -31,15 +31,21 @@
 	}
 
 	button.onclick = function() {
+
+		var hamburger = document.querySelector(".hamburger");
+
 		if ( -1 !== container.className.indexOf( 'toggled' ) ) {
 			container.className = container.className.replace( ' toggled', '' );
 			button.setAttribute( 'aria-expanded', 'false' );
 			menu.setAttribute( 'aria-expanded', 'false' );
+			hamburger.classList.toggle("is-active");
 		} else {
 			container.className += ' toggled';
 			button.setAttribute( 'aria-expanded', 'true' );
 			menu.setAttribute( 'aria-expanded', 'true' );
+			hamburger.classList.toggle("is-active");
 		}
+
 	};
 
 	// Get all the link elements within the menu.

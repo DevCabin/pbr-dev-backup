@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Cost Containment
+ * Template Name: Another Page
  *
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/

@@ -231,6 +231,47 @@
         'desc'   => __( 'Basic field with no subsections.', 'redux-framework-settings' ),
         'icon'   => 'el el-home',
         'fields' => array(
+          array(
+              'id'       => 'top-text-left',
+              'type'     => 'text',
+              'title'    => __( 'Left Text Field', 'redux-framework-settings' ),
+              'subtitle' => __( 'Top Right Area', 'redux-framework-settings' ),
+              'desc'     => __( 'Phone Number', 'redux-framework-settings' ),
+              'default'  => '605-362-5699',
+          ),
+          array(
+              'id'       => 'top-text-right-link',
+              'type'     => 'text',
+              'title'    => __( 'Right Text Link', 'redux-framework-settings' ),
+              'subtitle' => __( 'Top Right Area', 'redux-framework-settings' ),
+              'desc'     => __( 'Paste Link URL Here', 'redux-framework-settings' ),
+              'default'  => 'https://google.com',
+          ),
+          array(
+              'id'       => 'top-text-right',
+              'type'     => 'text',
+              'title'    => __( 'Right Text', 'redux-framework-settings' ),
+              'subtitle' => __( 'Top Right Area', 'redux-framework-settings' ),
+              'desc'     => __( 'Text for the link', 'redux-framework-settings' ),
+              'default'  => 'PROVIDER PORTAL',
+          ),
+          array(
+              'id'       => 'bottom-text-left',
+              'type'     => 'text',
+              'title'    => __( 'Left Text', 'redux-framework-settings' ),
+              'subtitle' => __( 'Bottom Footer Area', 'redux-framework-settings' ),
+              'desc'     => __( 'Any Text You Like', 'redux-framework-settings' ),
+              'default'  => 'PRECISION BILL REVIEW LLC PO BOX 89524 SIOUX FALLS SD',
+          ),
+          array(
+              'id'       => 'bottom-text-right',
+              'type'     => 'text',
+              'title'    => __( 'Right Text', 'redux-framework-settings' ),
+              'subtitle' => __( 'Bottom Footer Area', 'redux-framework-settings' ),
+              'desc'     => __( 'Text for the link', 'redux-framework-settings' ),
+              'default'  => '&copy; PBR ALL RIGHTS RESERVED | <a href="#">DESIGNED BY PATIENTX</a> | <a href="#">PRIVACY POLICY</a>',
+          ),
+          /*
             array(
                 'id'       => 'opt-text',
                 'type'     => 'text',
@@ -241,19 +282,20 @@
                     'content' => 'This is a <b>hint</b> tool-tip for the text field.<br/><br/>Add any HTML based text you like here.',
                 )
             )
+            */
         )
     ) );
 
     Redux::setSection( $opt_name, array(
-        'title' => __( 'Basic Theme Options', 'redux-framework-settings' ),
+        'title' => __( 'PBR Options', 'redux-framework-settings' ),
         'id'    => 'basic',
-        'desc'  => __( 'Add what you need.', 'redux-framework-settings' ),
+        'desc'  => __( 'Top right ext and Footer area text.', 'redux-framework-settings' ),
         'icon'  => 'el el-home'
     ) );
-
+/*
     Redux::setSection( $opt_name, array(
         'title'      => __( 'Top Right Text', 'redux-framework-settings' ),
-        'desc'       => __( 'For full documentation on this field, visit: ', 'redux-framework-settings' ) . '<a href="//docs.reduxframework.com/core/fields/text/" target="_blank">//docs.reduxframework.com/core/fields/text/</a>',
+        'desc'       => __( 'The text and link in the top right of the site'),
         'id'         => 'opt-text-subsection-1',
         'subsection' => true,
         'fields'     => array(
@@ -262,28 +304,28 @@
                 'type'     => 'text',
                 'title'    => __( 'Left Text Field', 'redux-framework-settings' ),
                 'subtitle' => __( 'Subtitle', 'redux-framework-settings' ),
-                'desc'     => __( 'Field Description', 'redux-framework-settings' ),
-                'default'  => 'Default Text',
+                'desc'     => __( 'Phone Number', 'redux-framework-settings' ),
+                'default'  => '605-362-5699',
             ),
             array(
                 'id'       => 'top-text-right-link',
                 'type'     => 'text',
                 'title'    => __( 'Right Text Link', 'redux-framework-settings' ),
                 'subtitle' => __( 'Subtitle', 'redux-framework-settings' ),
-                'desc'     => __( 'Field Description', 'redux-framework-settings' ),
-                'default'  => 'Default Text',
+                'desc'     => __( 'Paste Link URL Here', 'redux-framework-settings' ),
+                'default'  => 'https://google.com',
             ),
             array(
                 'id'       => 'top-text-right',
                 'type'     => 'text',
                 'title'    => __( 'Right Text', 'redux-framework-settings' ),
                 'subtitle' => __( 'Subtitle', 'redux-framework-settings' ),
-                'desc'     => __( 'Field Description', 'redux-framework-settings' ),
-                'default'  => 'Default Text',
+                'desc'     => __( 'Text for the link', 'redux-framework-settings' ),
+                'default'  => 'PROVIDER PORTAL',
             ),
         )
     ) );
-
+*/
 /*
     Redux::setSection( $opt_name, array(
         'title'      => __( 'Text Area', 'redux-framework-settings' ),

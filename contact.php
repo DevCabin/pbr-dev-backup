@@ -10,38 +10,51 @@
 
 
 get_header(); ?>
-	<div class="grid-three">
-			<div class="banner sub-banner" style="background:url(<?php echo get_stylesheet_directory_uri(); ?>/img/page_banner_9.png) top center no-repeat; height: 407px; margin-bottom: 6px;">
+
+			<div class="banner sub-banner" style="background:url(<?php the_field( 'c_banner_image' ); ?>) top center no-repeat; height: 407px; margin-bottom: 6px;background-size: cover;">
 				<div class="banner-text">
-					<h2>Join the Team</h2>
-					<p>Lorem ipsum doler</p>
+					<?php the_field( 'banner_text' ); ?>
 				</div>
 			</div>
 
+
+
 			<div class="blue-reverse left contact-left">
 
-						<p>
-								We were founded in 2001 boasting a large client base in
-								Iowa, Minnesota, Nebraska, and South Dakota. Our staff
-								has over 100+ years of combined experience in the
-								medical environment and is dedicated solely to workers’
-								</p>
+				<?php
+
+				while ( have_posts() ) : the_post();
+					the_content();
+				endwhile; // End of the loop.
+
+				?>
 			</div>
 
 			<div class="right-form">
-				<form>
-					<input type="text"></input>
-					<input type="text"></input>
-					<input type="text"></input>
-					<input type="text"></input>
-					<textarea></textarea>
-				</form>
+
+				<?php the_field( 'half_page' ); ?>
 
 			</div>
 
+<br>
 
 
-		</div>
+
+			<div class="row callout nomap" style="min-height:400px;background:url(../wp-content/themes/X-Start-master/img/pattern@2x.png) center center no-repeat;background-size: cover;margin-top: -173px;">
+					<div class="left-text">
+						<h3><em>We Save You Money!</em></h3>
+<h4>Precision Bill Review saved<br />
+our clients 47.38%</h4>
+<p><a class="button button-solid green" href="../services">Learn More</a></p>
+					</div>
+
+					<div class="circle-chart">
+						<img src="../wp-content/uploads/2018/02/circle-graphic-1.png" alt="">
+					</div>
+
+				</div><!-- callout -->
+
+
 
 			<?php
 			/*

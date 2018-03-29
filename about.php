@@ -22,7 +22,7 @@ get_header(); ?>
 
 
 			<div class="green-reverse left">
-
+				<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/white-green-check.png" alt="">
 				<h3 class="line"><?php the_field( 'top_left_heading' ); ?></h3>
 
 				<?php the_field( 'top_left_content' ); ?>
@@ -40,17 +40,19 @@ get_header(); ?>
 				</div>
 			<div class="blue right">
 
+				<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/lightbulb.png" alt="">
+
 					<h3 class="line left-text"><?php the_field( 'row_two_right_heading' ); ?></h3>
 
-						<p class="left-text">
+
 								<?php the_field( 'row_two_right_text' ); ?>
-						</p>
+
 
 			</div>
 
 
 			<div class="red-reverse left ">
-
+<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/matrix-red.png" alt="">
 				<h3 class="line"><?php the_field( 'row_3_left_heading' ); ?></h3>
 
 					<?php the_field( 'row_3_left_text' ); ?>
@@ -63,16 +65,10 @@ get_header(); ?>
 
 
 			<div class="row callout gray ">
-				<div class="left-text">
+
 
 					<?php the_field( 'callout_area_text_2' ); ?>
 
-
-				</div>
-
-				<!--div class="cta-right">
-					<a class="button ">Learn More</a>
-				</div-->
 
 			</div><!-- callout -->
 
@@ -160,7 +156,7 @@ get_header(); ?>
 
 
 
-						<div class="row callout" style="min-height:400px;background:url(<?php echo get_stylesheet_directory_uri(); ?>/img/pattern@2x.png) center center no-repeat;background-size: cover;">
+						<div class="row callout nomap" style="min-height:300px;background:url(<?php echo get_stylesheet_directory_uri(); ?>/img/pattern@2x.png) center center no-repeat;background-size: cover;">
 							<div class="left-text">
 								<?php the_field( 'callout_area_3_text_2' ); ?>
 							</div>

@@ -13,7 +13,8 @@
  */
 
 get_header(); ?>
-
+<?php
+/*
 			<div class="banner sub-banner grid-order-one" style="background:url(<?php echo get_stylesheet_directory_uri(); ?>/img/page_banner_1.png) top center no-repeat; height: 407px; margin-bottom: 6px;">
 
 				<div class="banner-text">
@@ -22,7 +23,7 @@ get_header(); ?>
 					Compensation Dollars<br>
 				Using a Proven</h2>
 
-					<a href="#" class="button button-solid red">CONTACT US NOW</a>
+					<a href="#" class="button button-solid red">CONTACT US NOW!</a>
 				</div>
 
 			</div>
@@ -158,7 +159,7 @@ get_header(); ?>
 			</div>
 
 
-			<div class="row callout grid-order-thirteen" style="min-height:400px;background:url(<?php echo get_stylesheet_directory_uri(); ?>/img/pattern@2x.png) center center no-repeat;background-size: cover;">
+			<div class="row callout nomap grid-order-thirteen" style="min-height:400px;background:url(<?php echo get_stylesheet_directory_uri(); ?>/img/pattern@2x.png) center center no-repeat;background-size: cover;">
 				<div class="left-text">
 					<h3>We Save You</h3>
 					<h4>Precision Bill Review saved<br>
@@ -198,20 +199,19 @@ get_header(); ?>
 
 
 
+*/
 
-			<?php
-			/*
-			while ( have_posts() ) : the_post();
-
-				get_template_part( 'template-parts/content', 'page' );
-
-				// If comments are open or we have at least one comment, load up the comment template.
+			while ( have_posts() ) : the_post(); ?>
+			<div class="empty-page">
+				<?php get_template_part( 'template-parts/content', 'page' ); ?>
+			</div>
+				<?php // If comments are open or we have at least one comment, load up the comment template.
 				if ( comments_open() || get_comments_number() ) :
 					comments_template();
 				endif;
 
 			endwhile; // End of the loop.
-			*/
+
 			?>
 
 

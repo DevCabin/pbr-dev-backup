@@ -1,6 +1,10 @@
+/*--------------------------------------------------------------
+# Structure.scss
+--------------------------------------------------------------*/
+
 $size__site-main: 100%;
 $size__site-sidebar: 25%;
-$wrapper__width: 1440px;
+$wrapper__width: 1439px;
 
 
 /*--------------------------------------------------------------
@@ -23,10 +27,23 @@ $wrapper__width: 1440px;
   table-layout: fixed;
 }
 
+
+.empty-page {
+  width: 80%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 0 0 12%;
+  h1 {
+    color: $blue;
+  }
+}
 .wrapper, .grid-three, .grid-four, header.site-header {
   width: 100%;
-  max-width: $wrapper__width;
+  // max-width: $wrapper__width;
   margin: 0 auto;
+}
+.banner {
+  background-size: cover !important;
 }
 header.site-header {
   margin-bottom: 12px;
@@ -46,10 +63,7 @@ header.site-header {
   }
   .site-branding {
     grid-area: branding;
-    padding: 30px 0 0 24px;
-      img {
-
-      }
+    padding: 30px 0 0 40px;
   }
   .top-right {
     display: grid;
@@ -62,14 +76,13 @@ header.site-header {
     grid-area: mainnavigation;
     justify-content: end;
   }
-  ul.nav-menu {
-
-  }
   .top-right ul, .top-right ul li {
     list-style-type: none;
     padding: 0;
     margin: 0;
     display: inline-block;
+    padding-right: 8px;
+    font-size: 14px;
   }
   .top-right ul li {
     margin: 0 4px;
@@ -134,150 +147,446 @@ header.site-header {
       }
     }
   }
+
   .image-div {
-    min-height: 385px;
+    min-height: 405px;
+    background-size: cover !important ;
   }
   .banner {
     grid-column: col / span 2;
     display: grid;
     justify-content: end;
     align-content: center;
+    .banner-text {
+      width: 75%;
+      padding-left: 130px;
+    }
+  }
+  .page-template-about {
+      .banner .banner-text {
+        //padding-left: 20%;
+      }
+  }
+  .page-template-analytics .banner .banner-text {
+      width: 100%;
+      //padding-left: 20%;
+  }
+  .page-template-contact {
+    .banner .banner-text {
+      //padding-left: 22%;
+    }
   }
   .home .banner {
     justify-content: normal;
   }
+  .home .row.nomap .left-text {
+    padding-top: 12%;
+  }
   .home .green.left {
     padding-left: 20%;
+    a.button {
+      position: relative;
+      top: 20px;
+    }
   }
-
+  .home .green {
+    a.button {
+      position: relative;
+      top: 20px;
+    }
+  }
   .banner-text {
-    // width: 70%;
-    justify-self: flex-end;
-
     h2 {
          color: $green;
-         font-size: 2.2rem;
+         font-size: 3rem;
          font-family: $secondary-font;
-         margin-bottom: 0;
-         line-height: 2.2rem;
+         margin-bottom: 2rem;
+         line-height: 2.9rem;
        }
     p {
          color: $blue;
-         margin-top: 0;
          font-size: 1.1rem;
+         margin-top: 5px;
+      }
+    a {
+        font-size: 1rem;
       }
       a.button-solid.red {
         background-color: $red;
-        color: white;
+        color: white !important;
         text-decoration: none;
-        font-family: $secondary-font;
+        //font-family: $secondary-font;
         float: right;
+        &:hover {
+          color: white;
+        }
       }
 
   }
-  .analytics .banner-text {
-    width: 88%;
+  a.button-solid.red {
+    color: white !important;
   }
-  .services .banner-text {
-    justify-self: flex-start;
-    position: relative;
-    left: 15%;
-    width: 70%;
-}
+  .page-template-services {
+    .image-div {
+      min-height: 0px;
+      height: auto;
+    }
+    .red-reverse h3.line {
+      padding-top: 40px;
+    }
+    .red-reverse.left a {
+      float: right;
+      position: relative;
+      left: -48%;
+      margin-bottom: 20px;
+    }
+    .banner-text p {
+      width: 100%;
+    }
+    .row.gray  {
+      a {
+        left: -90px;
+
+      }
+      h4 {
+        width: 90%;
+        padding-left: 25%;
+      }
+    }
+    .row.nomap .left-text {
+      padding-top: 80px;
+    }
+    .row.nomap .circle-chart img {
+      position: relative;
+      left: 75px;
+    }
+    .green.left h3.line {
+      padding-top: 30px;
+    }
+    .green.left {
+      padding-bottom: 15px;
+      ul {
+        padding-left: 30px;
+      }
+      a {
+        position: relative;
+        left: -203px;
+      }
+    }
+    .blue.right {
+      h3.line {
+          float: none;
+          padding: 0 22px 0 22%;
+      }
+      .blue-cont {
+        width: 332px;
+      }
+    }
+    .row.callout.nomap {
+      height: 386px;
+    }
+  }
+  .page-template-contact {
+    .row.nomap .left-text {
+      padding-top: 80px;
+    }
+    .row.nomap .circle-chart img {
+      position: relative;
+      left: 75px;
+    }
+    .row.callout.nomap {
+      height: 386px;
+    }
+  }
+  @media all and (max-width:960px){
+    .page-template-contact {
+      .row.nomap .left-text {
+        padding-top: 0px;
+      }
+      .row.nomap .circle-chart img {
+        position: relative;
+        left: 0px;
+      }
+      .row.callout.nomap {
+        height: auto;
+        order: 2;
+      }
+      .row.callout {
+        padding: 20px 0;
+      }
+      .banner.sub-banner {
+        height: auto !important;
+      }
+      .banner .banner-text {
+        padding-left: 4%;
+      }
+      .contact-left {
+        margin-top: -175px;
+        padding-left: 4%;
+      }
+      .row.callout.nomap {
+        margin-top: 0px !important;
+      }
+
+      footer.site-footer .prefooter img {
+        top: 0;
+      }
+      .site-footer .contact-left {
+        margin-top: 0;
+      }
+      footer.site-footer {
+        grid-template-rows: 150px 1fr 1fr 240px 50px 50px;
+      }
+    } // end contact page
+    .banner.services {
+      // services page specific, banner area
+      .banner-text{
+        grid-column: 1;
+        grid-row: 1;
+      }
+      .banner-group {
+        grid-column: 1;
+        grid-row: 2;
+        left: 0;
+        position: relative;
+        justify-self: center;
+        top: -24px;
+      }
+    }
+    .row.nomap .left-text {
+      justify-self: flex-start;
+      padding: 0 0 0 4%;
+      padding-top: 0px;
+      position: relative;
+      left: 0;
+      grid-column: 1;
+      grid-row: 1;
+      align-self: center;
+    }
+    .row .circle-chart {
+      grid-column: 2;
+      grid-row: 1;
+      align-self: center;
+    }
+  } // end media query 960
+
+  .right-form {
+    label {
+      width: 46%;
+      float: left;
+      margin-right: 2%;
+      margin-top: 2%;
+    }
+    input[type="text"],input[type="email"], input[type="tel"]{
+      max-width: 100%;
+    }
+    textarea {
+      max-width: 94%;
+    }
+  }
+  .row.callout.nomap {
+    img {
+      position: relative;
+      right: -75px;
+    }
+  }
   .banner-group {
     grid-column: col 2 / span 1;
-    padding-right: 165px;
+    //padding-right: 125px;
     align-self: center;
+    left: -160px;
+    position: relative;
   }
+  @media all and (min-width: 1440px) {
+    .banner-group img {
+      width: 592px !important;
+      max-width: 592px;
+    }
+  }
+
   .sub-banner {
     grid-template-columns: 1fr 1fr;
     .banner-text {
-      width: auto;
+      width: 92%;
      h2 {
-        font-size: 3.2rem;
-        line-height: 3.2rem;
-        margin-top: 0;
-        margin-bottom: 22px;
+        font-size: 2.5rem;
+        font-family: $secondary-font;
+        letter-spacing: 1.2px;
+        line-height: 2.7rem;
       }
+    }
+  }
+  .left, .right {
+    //padding-top: 12%;
+    padding-bottom: 4%;
+    ul {
+      margin-top: 12px;
+      li {
+        font-size: 18px;
+        margin-bottom: 12px;
+        font-family: $secondary-font;
+      }
+    }
+  }
+
+  .left p, .right p {
+    //text-align: justify;
+  }
+  .left p, .right p, .banner p, .left p, .right p a  {
+    font-size: 18px;
+  }
+  .green.left a {
+    float: right;
+    color: white !important;
+    &:hover {
+      color: white !important;
     }
   }
   .left {
     display: grid;
-    justify-content: flex-end;
+    //justify-content: flex-end;
     align-content: center;
+
+    p {
+      padding-right: 14%;
+    }
+
   }
+
   .right {
     display: grid;
     justify-content: flex-start;
     align-content: center;
+    ul {
+      margin-bottom: 1.5em;
+      margin-left: 55px;
+      li {
+        margin-left: 0%;
+      }
+    }
+  }
+  .right-form label {
+    color: $blue;
+  }
+  .contact-left {
+    display: grid;
+    align-content: baseline;
+    padding-left: 35%;
+    padding-top: 8%;
+    p {
+      margin: 0;
+      padding: 0;
+    }
+  }
+  .site-footer .contact-left {
+    padding-left: 0;
+    padding-top: 0;
+  }
+  .site-info-left, .site-info-right {
+    a {
+      color: white;
+    }
   }
   a.button {
     border: 1px solid white;
     font-weight: bold;
     letter-spacing: 1.15px;
-    padding: 6px 12px;
+    padding: 4px 8px;
     text-decoration: none;
+    //font-family: $tertiary-font;
   }
   a.button.button-solid {
     border: 0;
+    &:hover {
+      color: white;
+    }
   }
   .green {
     background-color: $green;
     color: white;
-
-    a.button {
-      justify-self: flex-end;
+    a {
+      border: 1px solid white;
+      font-weight: bold;
+      letter-spacing: 1.15px;
+      padding: 4px 8px;
+      text-decoration: none;
       color:  white;
-      margin-right: 100px;
-      position: relative;
+      &.button {
+        justify-self: flex-end;
+        color:  white;
+        margin-right: 16%;
+        position: relative;
+      }
+    }
+
+  }
+  .green.left {
+    padding-left: 20%;
+    p {
+      padding-left: 8px;
     }
   }
   .green.left ul {
     margin: 0;
+    padding: 16px;
   }
-
   .blue {
     background-color: $primary;
     color: white;
     a.button {
       justify-self: flex-end;
-      color:  white;
+      color:  white !important;
+    }
+    a {
+      border: 1px solid white;
+      font-weight: bold;
+      letter-spacing: 1.15px;
+      padding: 4px 8px;
+      text-decoration: none;
+      color:  white !important;
+      margin: 0 auto;
+      &:hover {
+        color: white;
+      }
     }
   }
+
   .green h3.line {
-    float: left;
-    position: relative;
-    border-bottom: 2px solid white;
-    padding: 0 22px 0 8px;
-    margin: 0;
-    font-size: 1.5rem;
-    letter-spacing: 1.2px;
+      float: left;
+      position: relative;
+      border-bottom: 2px solid white;
+      padding: 0 22px 0 8px;
+      margin: 0;
+      font-size: 1.8rem;
+      letter-spacing: 1.2px;
+
   }
-  .green h3.line::before {
-  		content: " ";
-  		border: 2px solid white;
-  		padding: 8px 8px 0px 0px;
-  		border-radius: 8px;
-  		width: 8px;
-  		height: 8px;
-  		display: block;
-  		position: relative;
-  		top: 43px;
-  		left: -18px;
-  }
+
+    .green h3.line::before {
+          content: " ";
+          border: 2px solid white;
+          padding: 8px 8px 0px 0px;
+          border-radius: 8px;
+          width: 8px;
+          height: 8px;
+          display: block;
+          position: relative;
+          top: 50px;
+          left: -18px;
+      }
   .green-reverse {
     background-color: white;
     color: $green;
-    //padding: 0 75px 0 200px;
-
      h3.line {
         float: left;
         position: relative;
         border-bottom: 2px solid $green;
         padding: 0 22px 0 8px;
         margin: 0;
-        font-size: 1.5rem;
+        font-size: 1.8rem;
         letter-spacing: 1.2px;
+        left: -8px;
+
       }
      h3.line::before {
         content: " ";
@@ -288,8 +597,11 @@ header.site-header {
         height: 8px;
         display: block;
         position: relative;
-        top: 43px;
+        top: 49px;
         left: -18px;
+      }
+      &.left {
+        padding-left: 20%;
       }
   }
   .red-reverse {
@@ -303,8 +615,9 @@ header.site-header {
         border-bottom: 2px solid $red;
         padding: 0 22px 0 8px;
         margin: 0;
-        font-size: 1.5rem;
+        font-size: 1.8rem;
         letter-spacing: 1.2px;
+        left: -8px;
       }
      h3.line::before {
         content: " ";
@@ -315,13 +628,33 @@ header.site-header {
         height: 8px;
         display: block;
         position: relative;
-        top: 43px;
+        top: 49px;
         left: -18px;
+      }
+
+      &.left {
+        padding-left: 20%;
+        ul {
+            margin: 12px 0 1.5em 0;
+            padding-left: 20px !important;
+          }
+        a {
+          float: right;
+        }
+      }
+      a {
+        color: $red !important;
+        border: 1px solid $red;
+        font-weight: bold;
+        letter-spacing: 1.15px;
+        padding: 4px 8px;
+        text-decoration: none;
       }
   }
   .blue-reverse {
     background-color: white;
     color: $blue;
+    padding-left: 20%;
     //padding: 0 75px 0 200px;
 
      h3.line {
@@ -332,6 +665,7 @@ header.site-header {
         margin: 0;
         font-size: 1.5rem;
         letter-spacing: 1.2px;
+
       }
      h3.line::before {
         content: " ";
@@ -346,24 +680,40 @@ header.site-header {
         left: -18px;
       }
   }
+  .blue-reverse.right {
+    padding-left: 0%;
+    ul {
+      margin-left: 42px;
+      li {
+        margin-left: 0%;
+      }
+    }
+    h3 {
+      padding-left: 12%;
+    }
+  }
+  .page-template-pbr .blue-reverse {
+      padding-left: 128px;
+  }
   .blue h3.line {
     float: left;
     position: relative;
     border-bottom: 2px solid white;
-    padding: 0 22px 0 8px;
+    padding: 0 22px 0 8%;
     margin: 0;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     letter-spacing: 1.2px;
-    text-align: center;
+    text-align: left;
+
   }
   h3.line.left-text {
     text-align: left;
-    padding: 0 22px 0 70px;
+    padding: 0 22px 0 75px;
   }
   .blue p.left-text {
     text-align: left;
     position: relative;
-    left: 70px;
+    left: 20%;
   }
   .blue h3.line::after {
       content: " ";
@@ -374,22 +724,111 @@ header.site-header {
       height: 8px;
       display: block;
       position: relative;
-      top: 31px;
+      top: 39px;
       float: right;
-      left: 33px;
+      left: 32px;
   }
+  .blue.right {
+    padding-top: 30px;
+    padding-right: 18%;
+    justify-content: initial;
+    a {
+      float: right;
+      position: relative;
+      left: 0;
+      z-index: 2;
+    }
+  }
+  .page-template-about {
+    .blue.right {
+      padding-top: 30px;
+      h3.line.left-text {
+          padding: 0 22px 0 8%;
+      }
+    }
+    .row.gray {
+      grid-template-rows: 1fr;
+      height: 260px;
+      .left-text h4 {
+        text-align: left;
+      }
+      .button {
+        position: relative;
+        top: -105px;
+      }
+    }
+    .left{
+      padding-left: 20%;
+    }
+    .button-solid.red {
+      float: right;
+    }
+    .sub-banner .banner-text .button {
+      position: relative;
+      left: -38px;
+    }
+    .row .left-text h3 {
+        font-size: 2.8rem;
+        font-family: "PT Sans", sans-serif;
+        margin-bottom: 0;
+        margin-top: 0;
+        line-height: 2.8rem;
+        font-weight: normal;
+        position: relative;
+        top: 50px;
+    }
+    .row.gray-map h3 {
+      top: 0px;
+    }
+    .row.callout {
+       min-height: 260px !important;
+       a {
+        position: relative;
+        top: 30px;
+        left: -110px;
+        padding: 6px 18px;
+        text-transform: uppercase;
+       }
+    }
+    .callout.nomap a {
+      left: -86px;
+    }
+    .circle-chart img {
+        position: relative;
+        top: 8px;
+    }
+    .red-reverse.left {
+      padding-top: 30px;
+    }
+  }
+
   .green p {
-    width: 72%;
+    width: 100%;
   }
   .blue p {
-    width: 72%;
-    left: 135px;
+    width: 98%;
+    padding-left: 20%;
     position: relative;
   }
-  .blue.right img {
-    position: relative;
-    left: 135px;
-    top: -14px;
+  .page-template-cost-containment {
+    .blue.right p {
+      padding-left: 75px;
+      margin-bottom: 0;
+    }
+  }
+  .blue.right {
+    //padding-top:12%;
+    ul {
+      //margin-left: 12%;
+    }
+    p {
+      padding-left: 8%;
+    }
+    img {
+      position: relative;
+      padding-left: 8%;
+      margin-bottom: 15px;
+    }
   }
   .red {
     background-color: $red;
@@ -398,21 +837,32 @@ header.site-header {
   .callout {
     color: $primary;
   }
+  .callout h4 {
+    font-weight: normal;
+  }
   .row  {
     grid-column: col / span 2;
     display: grid;
     grid-template-columns: 1fr 1fr;
+
     .left-text {
       justify-self: flex-end;
+      padding: 0 12% 0 28%;
+      position: relative;
+      left: 30px;
 
       h3 {
-        font-size: 3.2rem;
-        font-family: $secondary-font;
+        font-size: 3.6rem;
+        font-family: $tertiary-font;
         margin-bottom: 0;
+        margin-top: 0;
+        line-height: 3rem;
+        font-weight: normal;
+        margin-bottom: 12px;
       }
       h4 {
         font-size: 1.8rem;
-        font-family: $secondary-font;
+        font-family: $tertiary-font;
         margin-top: 0;
       }
 
@@ -427,6 +877,23 @@ header.site-header {
 
     }
   } //row
+  .row.nomap {
+    .left-text {
+      justify-self: flex-end;
+      padding: 0 0 0 26%;
+      position: relative;
+      left: 30px;
+      align-self: center;
+    }
+    .callout a {
+      left: -86px;
+    }
+  }
+  @media (max-width: 960px) {
+    .row.nomap .left-text {
+      padding: 0;
+    }
+  }
   .row.gray {
     display: grid;
     background-color: $gray;
@@ -436,8 +903,7 @@ header.site-header {
     height: auto;
     min-height: 240px;
     grid-template-columns: 3fr 1fr;
-    grid-template-rows: 3fr
-                        1fr;
+    grid-template-rows: 135px 76px;
      .left-text {
       justify-self: auto;
       align-content: center;
@@ -445,16 +911,68 @@ header.site-header {
       justify-items: flex-end;
       h4 {
         text-align: center;
-        font-size: 2.8rem;
+        font-size: 40px;
       }
+     }
+     h4 {
+           display: grid;
+           justify-items: center;
+           text-align: left;
+           font-size: 40px;
+           width: 79%;
+           padding-left: 17.25%;
+           font-style: italic;
+           font-family: $secondary-font;
+           font-weight: bold;
+           position: relative;
+           line-height: 1.2em;
+
      }
      .cta-right {
         grid-row: 2;
         grid-column: 2;
      }
-     a.button {
+     p {
        color: white;
+       grid-row: 2;
+       grid-column: 2;
      }
+     a {
+        color: white;
+        border: 1px solid white;
+        font-weight: bold;
+        letter-spacing: 1.15px;
+        padding: 4px 8px;
+        text-decoration: none;
+        position: relative;
+        left: -200px;
+        top: 20px;
+     }
+  }
+  .callout.nomap {
+    .left-text {
+
+      h3 {
+        font-weight: bold;
+        font-style: italic;
+      }
+    }
+    .circle-chart img {
+      position: relative;
+    }
+    a {
+      position: relative;
+      padding: 6px 18px;
+      font-size: 14px;
+    }
+  }
+
+  .page-template-analytics .row.gray h4 {
+    width: 90%;
+  }
+  .page-template-customer-care .row.gray h4 {
+    width: 90%;
+    top: 0;
   }
   .row.gray-map {
     display: grid;
@@ -472,14 +990,23 @@ header.site-header {
       display: grid;
       ul {
         margin: 0;
+        padding: 1rem;
+        li {
+          margin-bottom: 1rem;
+        }
       }
       h4 {
         text-align: center;
-        font-size: 2.8rem;
+        font-size: 40px;
       }
      }
      .map-right {
         grid-column: 2;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        img {
+          width: 490px;
+        }
      }
   }
   .red {
@@ -487,9 +1014,9 @@ header.site-header {
     color: white;
 
     a.button {
-      justify-self: flex-end;
+      float: right;
       color:  white;
-      margin-right: 100px;
+      margin-right: 16%;
       position: relative;
     }
 
@@ -499,8 +1026,9 @@ header.site-header {
       border-bottom: 2px solid white;
       padding: 0 22px 0 8px;
       margin: 0;
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       letter-spacing: 1.2px;
+
     }
      h3.line::before {
         content: " ";
@@ -511,17 +1039,31 @@ header.site-header {
         height: 8px;
         display: block;
         position: relative;
-        top: 43px;
+        top: 50px;
         left: -18px;
     }
     p {
-        width: 72%;
+        //width: 92%;
+        padding-left: 2%;
     }
   }
   .red.left {
-
       padding-left: 20%;
-
+      a.button {
+        margin: 0;
+      }
+  }
+  .home .red.left {
+      padding-left: 24%;
+      padding-top: 4%;
+      padding-bottom: 2%;
+      a.button {
+        position: relative;
+        top: 12px;
+      }
+  }
+  .red.right {
+      padding-right: 20%;
   }
   .red.right h3.line::before {
     display: none;
@@ -548,7 +1090,7 @@ header.site-header {
     a.button {
       justify-self: flex-start;
       color:  white;
-      margin-right: 100px;
+      margin-right: 16%;
       position: relative;
     }
 
@@ -562,13 +1104,13 @@ header.site-header {
       letter-spacing: 1.2px;
     }
     p {
-        width: 72%;
+      //  width: 92%;
         padding-left: 60px;
     }
   }
   .red.right h3, .red.right p {
     position: relative;
-    top: -70px;
+    top: 0px;
   }
 
   .green.right h3.line::before {
@@ -584,19 +1126,19 @@ header.site-header {
       height: 8px;
       display: block;
       position: relative;
-      top: 31px;
+      top: 33px;
       float: right;
-      left: 33px;
+      left: 32px;
   }
   .green.right {
     background-color: $green;
     color: white;
-
+    padding-right: 20%;
 
     a.button {
       justify-self: flex-start;
       color:  white;
-      margin-right: 100px;
+      margin-right: 16%;
       position: relative;
     }
 
@@ -610,21 +1152,21 @@ header.site-header {
       letter-spacing: 1.2px;
     }
     p {
-        width: 72%;
+        //width: 92%;
         padding-left: 60px;
     }
   }
   .green-reverse.right {
-    padding: 0px;
+    padding: 0px 20% 0 0;
 
     h3 {
-      padding-left: 70px;
-      top: -70px;
+      padding-left: 20%;
+      top: 0px;
       position: relative;
     }
     p {
-      padding-left: 70px;
-      top: -70px;
+      padding-left: 18%;
+      top: 0px;
       position: relative;
     }
   }
@@ -647,7 +1189,7 @@ header.site-header {
   }
   .green-reverse.right h3, .red.right p {
     position: relative;
-    top: -70px;
+    top: 0px;
   }
   .blue-reverse.right h3.line::before {
     display: none;
@@ -668,12 +1210,13 @@ header.site-header {
   }
   .blue-reverse.right h3, .red.right p {
     position: relative;
-    top: -70px;
+    top: 0px;
   }
+
   footer.site-footer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 250px 1fr 1fr 150px;
+    grid-template-rows: 250px 1fr 1fr 110px;
     grid-column: col / span 2;
 
     .prefooter {
@@ -689,7 +1232,7 @@ header.site-header {
     }
     .contact-left {
       grid-column: 1 / span 2;
-      margin-right: 20px;
+      //margin-right: 20px;
 
       h3.line {
        float: none;
@@ -701,6 +1244,7 @@ header.site-header {
        font-size: 1.5rem;
        text-align: right;
        letter-spacing: 1.2px;
+       left: -25px;
      }
       h3.line::after {
          content: " ";
@@ -711,14 +1255,14 @@ header.site-header {
          height: 8px;
          display: block;
          position: relative;
-         top: 32px;
+         top: 31px;
          left: 32px;
          float: right;
      }
     }
     .contact-right {
       grid-column: 3 / span 2;
-      margin-left: 20px;
+      //margin-left: 20px;
 
       h3.line {
         float: none;
@@ -729,6 +1273,7 @@ header.site-header {
         font-size: 1.5rem;
         letter-spacing: 1.2px;
         text-align: left;
+        right: -25px;
       }
       h3.line::before {
           content: " ";
@@ -756,58 +1301,402 @@ header.site-header {
     }
     .site-info-left {
       grid-column: 1 / span 2;
-      text-align: right;
+      text-align: center;
       padding-right: 20px;
       font-weight: lighter;
-      font-size: .9rem;
+      font-size: .8rem;
       text-transform: uppercase;
       display: grid;
       p {
         align-self: flex-end;
+        letter-spacing: 1px;
+        margin: 0;
       }
     }
     .site-info-right {
       grid-column: 3 / span 2;
-      text-align: left;
+      text-align: center;
       padding-left: 20px;
       font-weight: lighter;
-      font-size: .9rem;
+      font-size: .8rem;
       text-transform: uppercase;
       display: grid;
       p {
         align-self: flex-end;
+        letter-spacing: 1px;
+        margin: 0;
       }
     }
 
   }//footer.site-footer
 
 
+  .wpcf7-submit {
+    float: right;
+    margin-right: 6%;
+    border-color: white !important;
+    font-weight: normal;
+    padding: 9px 32px !important;
+    font-size: .9rem !important;
+  }
+  div.wpcf7 input[type="file"] {
+    display: none;
+  }
+  .careers-upload {
+    position: relative;
+    top: -32px;
+  }
+  .careers-upload span:first-child {
+      background: #759b3e;
+      color: white;
+      font-weight: bold;
+      font-size: 1rem;
+      font-size: .9rem;
+      line-height: 1;
+      padding: 8px 16px;
+      text-transform: uppercase;
+      cursor: pointer;
+      position: relative;
+      top: 12px;
+  }
+
+  .blue-reverse.left p strong {
+    font-size: 1.4rem;
+  }
+  .blue-reverse.left p {
+    padding-left: 10px;
+  }
+
+.banner-text a.button {
+    padding: 8px 16px;
+    letter-spacing: .8px;
+    font-size: .8rem;
+}
+// yeah! we've arrived!
+
+.left p:nth-of-type(2) {
+  margin-top: 0;
+}
+
+.left ul {
+  padding-left: 28px !important;
+}
+.wpcf7-submit {
+	padding: 10px 16px !important;
+}
+.page-template-pbr .wpcf7-form input[type="text"], .page-template-pbr .wpcf7-form input[type="tel"], .page-template-pbr .wpcf7-form input[type="email"] {
+  width: 80%;
+}
+.page-template-pbr .wpcf7-submit {
+  padding: 12px 50px !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+===============================================================================
+
+Responsive
+
+===============================================================================
+*/
 
 // All Below main container size
-@media (max-width: 1440px) {
+@media (max-width: 1439px) {
   .banner-text {
       width: 92%;
+      padding-left: 6%
   }
   .banner-group {
-      padding-right: 12px;
+      padding-right: 4%;
   }
 
 }/* max-width 1440 */
 
 // Mid sizes
-@media (min-width: 37.5em) and (max-width: 1440px) {
+@media (min-width: 960px) and (max-width: 1440px) {
 
-  .main-navigation li:last-child {
-  	padding-right:0px !important;
-  }
   .blue-reverse, .red-reverse, .green-reverse {
     padding: 0 25px 0 60px;
+  }
+  .blue-reverse.contact-left {
+    padding-top: 8%;
   }
 
 }// Mid sizes
 
 // Small Screens only
-@media (max-width: 37.5em) {
+@media screen and (max-width: 960px) {
+  .green.left {
+    padding-left: 8%;
+  }
+
+  .home .banner {
+    height: auto !important;
+    .banner-text {
+      width: 92%;
+      padding-left: 8%;
+      padding-bottom: 4%;
+    }
+  }
+  .home .banner-group {
+    display: none;
+  }
+  .home .blue h3.line {
+    padding: 0;
+    margin: 0 22px 0 8%;
+  }
+  .home .green, .home .green.left {
+    padding: 24px 0 24px 8%;
+
+    a.button {
+      position: relative;
+      top: -5px;
+    }
+  }
+  .home .blue, .green-reverse, .blue.right, .red-reverse, .green, .blue {
+    h3.line {
+      font-size: 1.5rem;
+    }
+  }
+  .page-template-cost-containment .blue.right h3.line {
+    padding: 0;
+    margin-left: 8%;
+  }
+  .page-template-cost-containment .right ul {
+    margin-left: 2%;
+  }
+  .page-template-cost-containment .row.gray h4 {
+    padding: 0 8%;
+    width: auto;
+  }
+  .page-template-cost-containment .blue-reverse.left {
+    padding: 0 0 0 8%;
+    margin: 0;
+    p {
+      padding-left: 0;
+      margin-left: 0;
+    }
+    h3.line {
+      padding-left: 0;
+      margin-left: 0;
+    }
+
+  }
+  .page-template-customer-care .blue h3.line {
+      padding-left: 0;
+      margin-left: 8%;
+  }
+  .page-template-customer-care .red.left {
+    padding: 0 0 0 8%;
+    margin: 0;
+
+    p {
+      padding-left: 0;
+      margin-left: 0;
+    }
+    h3.line {
+      padding-left: 0;
+      margin-left: 0;
+    }
+  }
+  .page-template-customer-care .row.gray a {
+    top:-5px;
+  }
+  .page-template-cost-containment .fifth-image {
+    display: none;
+  }
+  .page-template-cost-containment .green-reverse h3.line,
+  .page-template-cost-containment .red-reverse h3.line {
+    padding: 0 22px 0 0px;
+    left: 0;
+  }
+  .page-template-cost-containment .red-reverse h3.line {
+    margin: 0 0 0 0%;
+  }
+  .page-template-cost-containment .row.gray a {
+    top: -5px;
+  }
+  .row.gray {
+    h4 {
+      font-size: 1.5rem;
+      padding-left: 8%;
+      width: auto;
+    }
+    .button {
+      left: auto;
+    }
+  }
+  .page-template-about .blue.right h3.line.left-text {
+    padding: 0;
+    margin-left: 8%;
+  }
+  .page-template-about .row.callout a {
+    left: auto;
+  }
+  .red-reverse h3.line {
+      margin: 0 0 0 2%;
+  }
+  .home .red.left {
+    padding-left: 8%;
+    padding-top: 8%;
+    padding-bottom: 6%;
+  }
+  .green.right h3.line, .red.right h3.line {
+      padding: 0;
+      margin-left: 8%;
+  }
+  .green.right, .red.right {
+    p {
+      padding-left: 8%;
+    }
+  }
+  .row.gray-map .left-text {
+    padding: 0 12% 0 8%;
+    position: relative;
+    left: 0;
+  }
+  .page-template-analytics {
+    .left, .right {
+      padding-left: 0;
+      padding-right: 0;
+      h3.line, p {
+        padding-left: 0;
+        margin-left: 8%;
+        padding-right: 8%;
+      }
+    }
+    .blue.right {
+      padding-right: 0%;
+      p {
+        padding-right: 8%;
+      }
+    }
+    .green-reverse h3.line, .red-reverse h3.line {
+      left: 0;
+    }
+    .red-reverse.left {
+      padding-left: 0;
+    }
+    .green-reverse.right {
+      width: 100%;
+    }
+
+  }
+  .page-template-services, .page-template-analytics {
+    .row.gray a {
+      left: auto;
+      top: -12px;
+    }
+}
+
+  .sub-banner {
+    .banner-text {
+     h2 {
+        font-size: 1.5rem;
+        line-height: 1.7rem;
+      }
+    }
+  }
+  .right {
+    ul {
+      margin-left: 8%;
+    }
+  }
+  .page-template-cost-containment .blue.right p {
+    padding-left: 8%;
+  }
+  .green-reverse.left, .red-reverse.left {
+    padding-left: 8%;
+  }
+  h3.line.left-text {
+    padding-left: 8%;
+  }
+  .page-template-about .sub-banner .banner-text h2 {
+    font-size: 1.5rem;
+  }
+  .page-template-about .row.nomap .left-text {
+    align-self: auto;
+     h3 {
+      font-size: 24px;
+      line-height: 27px;
+    }
+  }
+  .page-template-about .row.gray .button {
+    position: relative;
+    top: -10px
+  }
+
+  .page-template-services .row.gray h4 {
+  	width: 92%;
+  	padding-left: 8%;
+  }
+  .page-template-pbr {
+    .blue-reverse {
+      padding-left: 8%;
+    }
+    .wpcf7-submit {
+      float: left;
+    }
+    .careers-upload span:first-child {
+      font-weight: normal;
+    }
+  }
+  .banner.sub-banner, .banner.analytics {
+    height: auto !important;
+    padding-bottom: 4%;
+  }
+  .banner.services {
+    height: auto !important;
+    .banner-group img {
+      max-width: 92%;
+    	left: 8%;
+    	position: relative;
+    }
+    .banner-text {
+      width: 92%;
+      left: 8%;
+      padding-left: 0px;
+      position: relative;
+    }
+  }
+  .blue h3.line {
+    padding-left: 8%;
+  }
+  .second-image, .sixth-image {
+    display: none;
+    // easy fix! Yeah!
+  }
+  .page-template-services .blue.right h3.line {
+    float: none;
+    padding: 0;
+    margin-left: 8%;
+  }
+  .page-template-services .right ul {
+    margin-left: 2%;
+  }
+  .page-template-services .red-reverse.left ul {
+    padding-left: 6% !important;
+  }
+  .page-template-services .row.nomap .left-text {
+     padding-top: 0;
+  }
+  .wrapper {
+    grid-template-columns: [col] 1fr;
+  }
   .site-branding {
     padding-top: 20px;
   }
@@ -823,6 +1712,22 @@ header.site-header {
   .main-navigation a {
     text-align: center;
   }
+  .banner-text h2, .row .left-text h3 {
+    font-size: 1.5rem;
+    line-height: initial;
+  }
+  .row .left-text h4 {
+    font-size: 1.5rem;
+    line-height: 1.7rem;
+  }
+  .page-template-services .green.left a, .page-template-services .row.nomap .circle-chart img, .row.callout.nomap img {
+    left: auto;
+    right: auto;
+  }
+  .callout.nomap .circle-chart img {
+    position: relative;
+    left: 0;
+  }
   header.site-header {
     grid-template-areas: "branding topright"
                          "mainnavigation mainnavigation";
@@ -833,10 +1738,34 @@ header.site-header {
   .green.right h3, .red.right p {
     top: 0px;
   }
+  .page-template-cost-containment
+  .sub-banner {
+    grid-template-columns: 1fr;
+  }
+  .banner-text, .sub-banner.banner-text {
+    p {
+         width: 92%;
+      }
+  }
   .sub-banner .banner-text h2 {
     font-size: 1.5rem;
-    line-height: 1.5rem;
-    padding-left: 12px;
+    line-height: 1.7rem;
+    padding-left: 12%;
+    letter-spacing: 1.2px;
+  }
+  .sub-banner .banner-text {
+    width: 58%;
+    grid-column: span 2;
+  }
+  .banner .banner-text {
+    width: 75%;
+    padding-left: 8%;
+  }
+
+
+  .row.gray-map .map-right {
+    padding-left: 12%;
+
   }
   .green, .red, .blue, .red-reverse, .green-reverse, .blue-reverse,
   .red:not(.button),
@@ -848,37 +1777,58 @@ header.site-header {
     min-height: 0;
   }
   .banner-group {
-    display: none;
+    //display: none;
   }
   .left, .right {
-    padding: 0 10px 0 14px;
+    padding: 12px 10px 0 14px;
   }
   .left, .right, .image-div {
     grid-column: span 2;
+  }
+  .page-template-about .row.gray {
+    height: auto;
+  }
+  .row.gray {
+    min-height: 240px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    padding-bottom: 24px;
+    p {
+      grid-column: 1;
+      justify-self: center;
+    }
+    a {
+      left: auto;
+    }
   }
   .row.gray .cta-right {
     grid-row: 2;
     grid-column: 1;
     justify-self: flex-end;
   }
-  .sub-banner .banner-text {
-    width: 92%;
-  }
+
   .sub-banner .banner-text h2 {
     padding-left: 0;
+    margin-bottom: 2rem;
+    font-size: 2rem;
   }
   .row.gray-map .map-right {
     grid-column: span 2;
   }
   // home page specific
-  .banner {
-    order: 1;
-  }
-  .left, .right, .image-div, .callout {
-    order: 2;
+  .home {
+    .banner {
+      order: 1;
+    }
+    .left, .right, .image-div, .callout {
+      order: 2;
+    }
+    .row {
+      padding: 20px 0;
+    }
   }
   .blue p.left-text {
-    width: 92%;
+    //width: 92%;
     left: auto;
   }
   .blue.right img {
@@ -887,10 +1837,15 @@ header.site-header {
   .green p {
     width: 92%;
   }
-  .blue p {
+  .green-reverse.right {
+    padding: 0px;
     width: 92%;
+  }
+  .blue p {
+    width: auto;
     left: auto;
   }
+
   .grid-four {
     grid-template-columns: [col] 1fr;
     .image-div {
@@ -902,41 +1857,30 @@ header.site-header {
       min-height: 250px;
     }
   }
-  /*
-  .green.left {
+  .right-form {
+    width: 92%;
+    padding-left: 6%;
     order: 2;
   }
-  .first-image {
-    order: 3;
+
+  .contact-left {
+    order: 1;
   }
-  .blue.right {
-    order: 4;
+  footer.site-footer .contact-left {
+    order: 0;
   }
-  .second-image {
-    order: 5;
-  }
-  .callout {
-    order: 6;
-  }
-  .red.left {
-    order: 7;
-  }
-  .third-image {
-    order: 8;
-  }
-  */
+
   .row .left-text, .row .circle-chart {
     grid-column: span 4;
   }
   .row .left-text {
     justify-self: center;
-    padding: 0 2%;
+    padding: 0 20%;
   }
   .sub-banner {
    order: 0;
     // fix what's carried over from home layout
-
-    height: 207px !important;
+    //height: 207px !important;
   }
   .image-div {
     min-height: 175px;
@@ -947,95 +1891,125 @@ header.site-header {
       width: 50%;
     }
   }
-  // Mobile only grid ordering
-  // Yikes, not a good idea.
-  /*
-  .grid-order-one {
-    order: 1;
+  .red.right h3, .red.right p {
+    top: 0px;
   }
-  .grid-order-two{
-    order: 2;
-  }
-  .grid-order-three {
-    order: 3;
-  }
-  .grid-order-four {
-    order: 4;
-  }
-  .grid-order-five {
-    order: 5;
-  }
-  .grid-order-six {
-    order: 6;
-  }
-  .grid-order-seven {
-    order: 7;
-  }
-  .grid-order-eight {
-    order: 8;
-  }
-  .grid-order-nine {
-    order: 9;
-  }
-  .grid-order-ten {
-    order: 10;
-  }
-  .grid-order-eleven {
-    order: 11;
-  }
-  .grid-order-twelve {
-    order: 12;
-  }
-  .grid-order-thirteen {
-    order: 13;
-  }
-  .grid-order-fourteen {
-    order: 14;
-  }
-  .grid-order-fifteen {
-    order: 15;
-  }
-  */
+  .green-reverse.right {
+    padding: 0px;
 
+    h3 {
+      top: 0px;
+    }
+    p {
+      top: 0px;
+    }
+  }
+  .green-reverse.right h3, .red.right p {
+    top: 0px;
+  }
+  .blue-reverse.right h3, .red.right p {
+    top: 0px;
+  }
+  .blue-reverse.right h3 {
+    margin-left: 8%;
+    padding: 0;
+  }
+  .blue-reverse.right ul {
+    margin-left: 3%;
+  }
+  .page-template-about {
+    .row.callout.nomap {
+      display: block;
+      .left-text {
+        left: 0;
+        padding-left: 8%
+      }
+      .circle-chart {
+        display: none;
+      }
+      a {
+        float: none;
+        left: auto;
+      }
+    }
+  }
+  .green.right, .blue.right {
+    padding-right: 8%;
+  }
 
   // site wide
   .site-footer {
-    order: 99; // Really?
+    order: 99; // Really? It's not that bad. Come on.
   }
   footer.site-footer .contact-left {
     grid-column: span 4;
-    margin-right: 20px;
+    //margin-right: 20px;
   }
   footer.site-footer .contact-right {
     grid-column: span 4;
-    margin-left: 20px;
+    //margin-left: 20px;
     padding-bottom: 24px;
   }
   footer.site-footer .site-info-left, footer.site-footer .site-info-right {
     grid-column: span 4;
     text-align: center;
+    a {
+      color: white !important;
+    }
   }
   footer.site-footer {
     grid-template-rows: 250px 1fr 1fr 240px 50px 50px;
   }
-  .prefooter {
 
+
+  h3.line::before, h3.line::after {
+    display: none !important;
   }
-  .contact-left {
-
+  .site-info-left p {
+    position: relative;
+    top: -12px;
   }
-  .contact-right {
-
-  }
-  .footer-menu {
-
-  }
-  .site-info-left {
-
-  }
-  .site-info-right {
-
-  }
-
 
 }// Small Screens only
+
+
+@media all and (min-width:1400px) {
+  .page-template-contact {
+    .right-form {
+        width: 690px !important;
+        position: relative;
+        left: -135px;
+    }
+  }
+}
+@media all and (min-width: 960px) {
+  .page-template-contact {
+    .blue-reverse {
+        padding-left: 285px;
+    }
+    .right-form {
+        width: 100%;
+        position: relative;
+        left: 0;
+    }
+
+    #colophon {
+      margin-top: -34px;
+    }
+  }
+}
+
+
+// overrides
+.blue-span {
+  color: $blue;
+  font-size: 1.2rem;
+}
+p {
+  line-height: 1.4rem;
+  font-family: $secondary-font;
+  width: auto;
+}
+a.button {
+  font-family: $main-font;
+}

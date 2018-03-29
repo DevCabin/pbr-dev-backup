@@ -47,7 +47,7 @@ get_header(); ?>
 
 				</div>
 
-			<div class="row callout" style="min-height:400px;background:url(<?php echo get_stylesheet_directory_uri(); ?>/img/pattern@2x.png) center center no-repeat;background-size: cover;">
+			<div class="row callout nomap" style="min-height:300px;background:url(<?php echo get_stylesheet_directory_uri(); ?>/img/pattern@2x.png) center center no-repeat;background-size: cover;">
 				<div class="left-text">
 
 					<?php the_field( 'home_callout_area_text' ); ?>
