@@ -775,7 +775,7 @@ header.site-header {
         line-height: 2.8rem;
         font-weight: normal;
         position: relative;
-        top: 50px;
+        top: 20px;
     }
     .row.gray-map h3 {
       top: 0px;
@@ -1601,7 +1601,10 @@ Responsive
       left: auto;
       top: -12px;
     }
-}
+  }
+  .page-template-about .row.nomap a {
+    top: 50px;
+  }
 
   .sub-banner {
     .banner-text {
@@ -1999,6 +2002,12 @@ Responsive
   }
 }
 
+
+#colophon {
+  .contact-right {
+    overflow-x: hidden;
+  }
+}
 
 // overrides
 .blue-span {

@@ -881,7 +881,7 @@ h3.line.left-text {
   line-height: 2.8rem;
   font-weight: normal;
   position: relative;
-  top: 50px; }
+  top: 20px; }
 
 .page-template-about .row.gray-map h3 {
   top: 0px; }
@@ -1534,6 +1534,8 @@ Responsive
   .page-template-services .row.gray a, .page-template-analytics .row.gray a {
     left: auto;
     top: -12px; }
+  .page-template-about .row.nomap a {
+    top: 50px; }
   .sub-banner .banner-text h2 {
     font-size: 1.5rem;
     line-height: 1.7rem; }
@@ -1799,6 +1801,9 @@ Responsive
     left: 0; }
   .page-template-contact #colophon {
     margin-top: -34px; } }
+
+#colophon .contact-right {
+  overflow-x: hidden; }
 
 .blue-span {
   color: #236387;
