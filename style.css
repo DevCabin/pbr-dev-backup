@@ -274,7 +274,7 @@ header.site-header {
   =========================================================
   */
 header.site-header {
-  display: grid;
+  display: block;
   grid-template-columns: [col] 1fr [col] 1fr;
   grid-template-rows: [row] auto;
   grid-template-areas: "branding topright" "branding mainnavigation"; }
@@ -284,7 +284,7 @@ header.site-header {
   padding: 30px 0 0 40px; }
 
 .top-right {
-  display: grid;
+  display: block;
   grid-area: topright;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
@@ -292,7 +292,7 @@ header.site-header {
   padding: 24px 0 32px 8px; }
 
 .site-header .main-navigation {
-  display: grid;
+  display: block;
   grid-area: mainnavigation;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
@@ -315,7 +315,7 @@ header.site-header {
   =========================================================
   */
 .wrapper {
-  display: grid;
+  display: block;
   grid-template-columns: [col] 1fr [col] 1fr;
   grid-auto-rows: minmax(245px, auto);
   grid-column-gap: 5px;
@@ -323,7 +323,7 @@ header.site-header {
 
 .grid-four {
   grid-column: col / span 2;
-  display: grid;
+  display: block;
   grid-template-columns: [col] 1fr [col] 1fr [col] 1fr [col] 1fr;
   grid-column-gap: 5px;
   grid-row-gap: 0px; }
@@ -336,7 +336,7 @@ header.site-header {
 
 .grid-three {
   grid-column: col / span 2;
-  display: grid;
+  display: block;
   grid-template-columns: [col] 1fr [col] 1fr [col] 1fr;
   grid-column-gap: 5px;
   grid-row-gap: 0px; }
@@ -348,7 +348,7 @@ header.site-header {
     grid-column: col / span 1; }
   .grid-three .right-form form {
     grid-column: col 2 / span 2;
-    display: grid;
+    display: block;
     grid-template-columns: [col] 1fr [col] 1fr [col] 1fr [col] 1fr;
     grid-template-rows: [row] 1fr [row] 1fr [row] 2fr;
     grid-column-gap: 20px;
@@ -362,7 +362,7 @@ header.site-header {
 
 .banner {
   grid-column: col / span 2;
-  display: grid;
+  display: block;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: end;
@@ -591,14 +591,14 @@ a.button-solid.red {
     color: white !important; }
 
 .left {
-  display: grid;
+  display: block;
   -ms-flex-line-pack: center;
       align-content: center; }
   .left p {
     padding-right: 14%; }
 
 .right {
-  display: grid;
+  display: block;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
@@ -614,7 +614,7 @@ a.button-solid.red {
   color: #236387; }
 
 .contact-left {
-  display: grid;
+  display: block;
   -ms-flex-line-pack: baseline;
       align-content: baseline;
   padding-left: 35%;
@@ -937,7 +937,7 @@ h3.line.left-text {
 
 .row {
   grid-column: col / span 2;
-  display: grid;
+  display: block;
   grid-template-columns: 1fr 1fr; }
   .row .left-text {
     justify-self: flex-end;
@@ -978,7 +978,7 @@ h3.line.left-text {
     padding: 0; } }
 
 .row.gray {
-  display: grid;
+  display: block;
   background-color: #434343;
   color: white;
   border-top: 5px solid white;
@@ -991,13 +991,13 @@ h3.line.left-text {
     justify-self: auto;
     -ms-flex-line-pack: center;
         align-content: center;
-    display: grid;
+    display: block;
     justify-items: flex-end; }
     .row.gray .left-text h4 {
       text-align: center;
       font-size: 40px; }
   .row.gray h4 {
-    display: grid;
+    display: block;
     justify-items: center;
     text-align: left;
     font-size: 40px;
@@ -1046,7 +1046,7 @@ h3.line.left-text {
   top: 0; }
 
 .row.gray-map {
-  display: grid;
+  display: block;
   background-color: #434343;
   color: white;
   height: auto;
@@ -1060,7 +1060,7 @@ h3.line.left-text {
             justify-content: center;
     -ms-flex-line-pack: center;
         align-content: center;
-    display: grid; }
+    display: block; }
     .row.gray-map .left-text ul {
       margin: 0;
       padding: 1rem; }
@@ -1253,7 +1253,7 @@ h3.line.left-text {
   top: 0px; }
 
 footer.site-footer {
-  display: grid;
+  display: block;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 250px 1fr 1fr 110px;
   grid-column: col / span 2; }
@@ -1816,6 +1816,465 @@ p {
 
 a.button {
   font-family: "PT Sans", sans-serif; }
+
+/* IE Hacks ... Oh, what a wonderful world ... */
+@media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+  p {
+    display: block;
+    float: left;
+    position: relative; }
+  header.site-header {
+    display: block; }
+  .top-right {
+    float: right;
+    position: relative;
+    top: -133px;
+    left: 0; }
+  .main-navigation ul {
+    float: right;
+    position: relative;
+    top: -133px;
+    left: 0; }
+  .banner .banner-text {
+    width: 60%;
+    padding-right: 2%; }
+  .banner-text a.button-solid.red {
+    float: none;
+    position: relative;
+    left: 73%; }
+  .banner-group {
+    position: relative;
+    left: 0;
+    top: -133px;
+    padding-right: 30px;
+    float: right;
+    width: 40%; }
+    .banner-group img {
+      max-width: 100%;
+      height: auto; }
+  .banner {
+    display: inline-block;
+    float: left;
+    width: 100%; }
+  .left, .right {
+    display: inline-block;
+    height: 405px;
+    padding-top: 60px;
+    padding-bottom: 0;
+    width: 50%;
+    float: left; }
+  .home .image-div.second-image {
+    float: left; }
+  .home .banner {
+    /* Hope we can make this go away at some point */
+    margin-top: -100px; }
+  /*
+  SERVICES
+  */
+  .page-template-services .banner {
+    /* Hope we can make this go away at some point */
+    margin-top: -100px;
+    padding-top: 100px; }
+  .page-template-services .left.green {
+    padding-top: 0;
+    height: 500px; }
+  .page-template-services .image-div.first-image {
+    height: 500px; }
+  .page-template-services .image-div {
+    min-height: 405px;
+    height: 405px; }
+  .page-template-services .second-image {
+    float: left; }
+  .page-template-services .row.gray {
+    float: left;
+    position: relative;
+    display: block;
+    width: 100%; }
+  .page-template-services .row.gray p {
+    width: 100%;
+    float: left;
+    display: block; }
+  .page-template-services .row.gray a {
+    float: right;
+    top: -25px; }
+  .page-template-services .red-reverse.left p {
+    display: block;
+    width: 100%; }
+  .page-template-services .row.callout.nomap {
+    padding-top: 0; }
+  .page-template-services .row.callout.nomap img {
+    top: 0px; }
+  /*
+  =======================
+  cost-containment
+  =======================
+  */
+  .page-template-cost-containment .banner {
+    /* Hope we can make this go away at some point */
+    margin-top: -100px;
+    padding-top: 100px; }
+  .page-template-cost-containment .second-image {
+    float: left; }
+  .page-template-cost-containment .blue.right, .page-template-cost-containment .second-image {
+    height: 450px; }
+  .page-template-cost-containment .row.gray {
+    float: left;
+    position: relative;
+    display: block;
+    width: 100%; }
+  .page-template-cost-containment .row.gray p {
+    width: 100%;
+    float: left;
+    display: block; }
+  .page-template-cost-containment .row.gray a {
+    float: right;
+    top: -25px; }
+  .page-template-cost-containment .fifth-image, .page-template-cost-containment .sixth-image {
+    float: left; }
+  /*
+  =======================
+  customer-care
+  =======================
+  */
+  .page-template-customer-care .banner {
+    /* Hope we can make this go away at some point */
+    margin-top: -100px;
+    padding-top: 100px; }
+  .page-template-customer-care .second-image {
+    float: left; }
+  .page-template-customer-care .row.gray {
+    float: left;
+    position: relative;
+    display: block;
+    width: 100%; }
+  .page-template-customer-care .row.gray p {
+    width: 100%;
+    float: left;
+    display: block; }
+  .page-template-customer-care .row.gray a {
+    float: right;
+    top: -25px; }
+  .page-template-customer-care .sixth-image {
+    float: left; }
+  /*
+  =======================
+  analytics
+  =======================
+  */
+  .page-template-analytics .banner {
+    /* Hope we can make this go away at some point */
+    margin-top: -100px;
+    padding-top: 100px; }
+  .page-template-analytics .second-image {
+    float: left; }
+  .page-template-analytics .row.gray {
+    float: left;
+    position: relative;
+    display: block;
+    width: 100%; }
+  .page-template-analytics .row.gray p {
+    width: 100%;
+    float: left;
+    display: block; }
+  .page-template-analytics .row.gray a {
+    float: right;
+    top: -25px; }
+  .page-template-analytics .sixth-image {
+    float: left; }
+  .page-template-analytics .green-reverse h3.line {
+    float: left;
+    position: relative;
+    border-bottom: 2px solid #759b3e;
+    padding: 40px 22px 0px 20%;
+    margin: 0;
+    font-size: 1.8rem;
+    letter-spacing: 1.2px;
+    left: 0px; }
+  .page-template-analytics .green-reverse.right h3.line::after {
+    content: " ";
+    border: 2px solid #759b3e;
+    padding: 8px 8px 0px 0px;
+    border-radius: 8px;
+    width: 8px;
+    height: 8px;
+    display: block;
+    position: relative;
+    top: 38px;
+    float: right;
+    left: 33px; }
+  /*
+  =======================
+  CAREERS
+  =======================
+  */
+  .page-template-pbr .banner {
+    /* Hope we can make this go away at some point */
+    margin-top: -100px;
+    padding-top: 100px; }
+  .page-template-pbr .left {
+    height: auto; }
+  .page-template-pbr .image-div {
+    height: 900px !important; }
+  .page-template-pbr .row.callout.nomap {
+    margin-top: 0 !important; }
+  .page-template-pbr .blue-reverse.left #wpcf7-f373-p18-o1 p {
+    width: 100%;
+    float: left;
+    display: block;
+    padding: 0;
+    margin: 0; }
+  .page-template-pbr .blue-reverse.left #wpcf7-f373-p18-o1 label {
+    width: 100%;
+    float: left;
+    margin-right: 2%;
+    margin-top: 2%; }
+  .page-template-pbr .blue-reverse.left #wpcf7-f373-p18-o1 label.careers-upload {
+    top: 0; }
+  .page-template-pbr .blue-reverse.left #wpcf7-f373-p18-o1 .wpcf7-submit {
+    top: -18px;
+    left: -100px;
+    position: relative; }
+  /*
+  TESTIMONIALS
+  */
+  .page-template-testimonials .banner {
+    /* Hope we can make this go away at some point */
+    margin-top: -100px;
+    padding-top: 100px; }
+  .page-template-testimonials .second-image {
+    float: left; }
+  .page-template-testimonials .row.gray {
+    float: left;
+    position: relative;
+    display: block;
+    width: 100%; }
+  .page-template-testimonials .row.gray p {
+    width: 100%;
+    float: left;
+    display: block; }
+  .page-template-testimonials .row.gray a {
+    float: right;
+    top: -25px; }
+  /*
+  ABOUT
+  */
+  .page-template-about .banner {
+    /* Hope we can make this go away at some point */
+    margin-top: -100px;
+    padding-top: 100px; }
+  .page-template-about .banner-text p {
+    width: 100%;
+    float: left;
+    text-align: right; }
+  .page-template-about .green-reverse.left, .page-template-about .image-div.first-image {
+    height: 590px; }
+  .page-template-about .image-div.second-image, .page-template-about .image-div.third-image {
+    float: left;
+    height: 500px; }
+  .page-template-about .blue.right, .page-template-about .red-reverse.left {
+    height: 500px; }
+  .page-template-about .image-div.sixth-image {
+    float: left;
+    height: 405px; }
+  .page-template-about .row.gray-map {
+    float: left;
+    position: relative;
+    width: 100%; }
+  .page-template-about .row.gray-map .left-text {
+    display: block;
+    float: left;
+    width: 50%;
+    left: auto;
+    padding: 4% 0 0 12%; }
+  .page-template-about .row.gray-map .map-right {
+    display: block;
+    float: right;
+    width: 50%; }
+  .page-template-about .row.gray {
+    float: left;
+    position: relative;
+    display: block;
+    width: 100%; }
+  .page-template-about .row.gray p {
+    width: 100%;
+    float: left;
+    display: block; }
+  .page-template-about .row.gray a {
+    float: right;
+    top: -25px; }
+  .page-template-about .image-div.first-image {
+    float: left; }
+  .page-template-about .blue-reverse.right h3 {
+    padding-left: 8%; }
+  .page-template-about .blue-reverse.right ul {
+    float: left; }
+  .page-template-about .blue-reverse.right h3 {
+    padding-left: 8%;
+    width: 78%;
+    float: left;
+    clear: both;
+    display: block; }
+  .page-template-about .row.callout.nomap .left-text {
+    float: left;
+    display: block;
+    position: relative;
+    width: 50%;
+    left: auto;
+    padding-left: 12%; }
+    .page-template-about .row.callout.nomap .left-text p {
+      width: 100%;
+      float: left;
+      display: block; }
+  .page-template-about .row.callout {
+    min-height: 0px !important; }
+  /*
+  CONTACT
+  */
+  .page-template-contact .banner {
+    /* Hope we can make this go away at some point */
+    margin-top: -100px;
+    padding-top: 100px; }
+  .page-template-contact .row.callout.nomap {
+    margin-top: 0 !important; }
+  .page-template-contact .blue-reverse.left.contact-left p {
+    width: 100%;
+    float: left;
+    display: block; }
+  .page-template-contact .right-form {
+    float: left;
+    display: block; }
+    .page-template-contact .right-form p {
+      width: 50%;
+      float: left;
+      display: block; }
+    .page-template-contact .right-form label {
+      width: 100%;
+      float: left;
+      margin-right: 2%;
+      margin-top: 2%; }
+  .page-template-contact .row.nomap .left-text {
+    padding-top: 0px; }
+  .page-template-contact .contact-left {
+    margin-top: 0; } }
+
+@media screen and (-ms-high-contrast: active) and (min-width: 500px) and (max-width: 1400px), screen and (-ms-high-contrast: none) and (min-width: 500px) and (max-width: 1400px) {
+  .page-template-contact .blue-reverse {
+    padding-left: 12%; }
+  .page-template-contact .right-form {
+    width: 48%; } }
+
+@media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+  .image-div {
+    display: inline-block;
+    height: 405px;
+    height: auto;
+    background-size: cover !important;
+    width: 50%;
+    position: relative;
+    max-width: 100%; }
+  .left img {
+    float: left;
+    display: block;
+    position: relative; }
+  h3.line {
+    display: inline-block;
+    width: 100%; }
+  .home .row.nomap .left-text {
+    padding-top: 0;
+    padding-left: 12%; }
+  .row.callout.nomap {
+    float: left;
+    display: block;
+    position: relative;
+    width: 100%;
+    padding-top: 75px; }
+    .row.callout.nomap .left-text {
+      float: left;
+      display: block;
+      position: relative; }
+    .row.callout.nomap img {
+      top: -50px; }
+  .row.gray {
+    float: left;
+    position: relative; }
+  footer.site-footer > div {
+    display: block;
+    float: left;
+    width: 100%;
+    padding: 10px 0px; }
+  footer.site-footer {
+    display: block;
+    float: left;
+    width: 100%; }
+  footer.site-footer .site-info-left p {
+    text-align: left; }
+  footer.site-footer .site-info-right p {
+    float: right;
+    padding-right: 20px;
+    text-align: right; }
+  footer.site-footer h3.line {
+    width: 48%; }
+  footer.site-footer .contact-right {
+    position: relative;
+    top: -60px; }
+    footer.site-footer .contact-right h3.line {
+      float: right; }
+  footer.site-footer .prefooter img {
+    top: 60px; }
+  .image-div {
+    top: 0px; }
+  .home .green.left, .home .red.left, .green.left, .red.left {
+    padding-left: 12%; } }
+
+@media screen and (-ms-high-contrast: active) and (min-width: 769px), screen and (-ms-high-contrast: none) and (min-width: 769px) {
+  .site-info-left p {
+    position: relative;
+    top: 42px;
+    left: 20px; } }
+
+header.site-header {
+  display: grid; }
+
+.top-right {
+  display: grid; }
+
+.site-header .main-navigation {
+  display: grid; }
+
+.wrapper {
+  display: grid; }
+
+.grid-four {
+  display: grid; }
+
+.grid-three {
+  display: grid; }
+  .grid-three .right-form form {
+    display: grid; }
+
+.banner {
+  display: grid; }
+
+.left {
+  display: grid; }
+
+.right {
+  display: grid; }
+
+.row {
+  display: grid; }
+
+.row.gray {
+  display: grid; }
+
+.row.gray-map {
+  display: grid; }
+
+footer.site-footer {
+  display: grid; }
+
+.site-info-right {
+  display: grid; }
 
 /*--------------------------------------------------------------
 # Typography

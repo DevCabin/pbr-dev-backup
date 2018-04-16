@@ -22,7 +22,7 @@ global $redux_options;
 		</div>
 		<div class="contact-right">
 			<h3 class="line">
-				<a href="http://www.talispoint.com/login/" target="_blank" rel="noopener">Provider Portal</a>
+				<a href="http://www.talispoint.com/talispoint/login.pl?user=STRATA&password=PBR22" target="_blank" rel="noopener">Provider Portal</a>
 			</h3>
 		</div>
 

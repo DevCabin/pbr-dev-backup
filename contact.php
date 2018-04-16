@@ -41,16 +41,37 @@ get_header(); ?>
 
 
 			<div class="row callout nomap" style="min-height:400px;background:url(../wp-content/themes/X-Start-master/img/pattern@2x.png) center center no-repeat;background-size: cover;margin-top: -173px;">
-					<div class="left-text">
-						<h3><em>We Save You Money!</em></h3>
-<h4>Precision Bill Review saved<br />
-our clients 47.38%</h4>
-<p><a class="button button-solid green" href="../services">Learn More</a></p>
-					</div>
 
-					<div class="circle-chart">
-						<img src="../wp-content/uploads/2018/02/circle-graphic-1.png" alt="">
-					</div>
+					<?php if ( is_active_sidebar( 'wsym-row-left' ) ) { ?>
+
+
+						<div class="left-text">
+							<?php dynamic_sidebar( 'wsym-row-left' ); ?>
+						</div>
+
+						<div class="circle-chart">
+							<?php dynamic_sidebar( 'wsym-row-right' ); ?>
+						</div>
+
+
+					<?php } else {  ?>
+
+
+						<div class="left-text">
+							<h3><em>We Save You Money!</em></h3>
+							<h4>Precision Bill Review saved<br />
+							our clients 58.4%</h4>
+							<p><a class="button button-solid green" href="../services">Learn More</a></p>
+						</div>
+
+						<div class="circle-chart">
+							<img src="../wp-content/uploads/2018/04/58Percent-graphic@2x.png" alt="">
+						</div>
+
+
+					<?php } ?>
+
+
 
 				</div><!-- callout -->
 

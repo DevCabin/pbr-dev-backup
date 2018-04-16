@@ -129,6 +129,24 @@ function xstart_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'We Save You Money - Left', 'xstart' ),
+		'id'            => 'wsym-row-left',
+		'description'   => esc_html__( 'For pages where this row exists but there is no custom field (like contact us).', 'xstart' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<span style="display:none;">',
+		'after_title'   => '</span>',
+	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'We Save You Money - Right', 'xstart' ),
+		'id'            => 'wsym-row-right',
+		'description'   => esc_html__( 'For pages where this row exists but there is no custom field (like contact us).', 'xstart' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<span style="display:none;">',
+		'after_title'   => '</span>',
+	) );
 }
 add_action( 'widgets_init', 'xstart_widgets_init' );
 

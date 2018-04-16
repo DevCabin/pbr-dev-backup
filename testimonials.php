@@ -39,7 +39,7 @@ get_header(); ?>
 				</div>
 			<div class="blue right">
 
-								<?php the_field( 'second_row_content' ); ?>
+								<?php the_field( 'second_row_content_2' ); ?>
 
 			</div>
 
